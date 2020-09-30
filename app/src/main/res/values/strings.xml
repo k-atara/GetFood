@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Get Food</string>
+    <string name="btnIniciar">Iniciar</string>
 </resources>
