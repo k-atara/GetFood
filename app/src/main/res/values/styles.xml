@@ -13,7 +13,6 @@
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
-
     <style name="titlesPD" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/raleway_black</item>
         <item name="android:textSize">30sp</item>
@@ -28,18 +27,24 @@
 
     <style name="sub_titlesP" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/raleway_bold</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="sub_titlesPD" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/raleway_bold</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 
     <style name="sub_titlesPL" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+    </style>
+
+    <style name="buttonA" parent="android:Widget.Button">
+        <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/colorPrimaryLight</item>
     </style>
