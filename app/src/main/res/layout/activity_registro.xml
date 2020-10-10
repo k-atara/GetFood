@@ -5,78 +5,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".LogIn">
+    tools:context=".ui.Registro">
 
     <LinearLayout
-        android:layout_width="373dp"
-        android:layout_height="314dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="363dp"
+        android:layout_height="452dp"
         android:background="@drawable/laouy_creame_shape"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865">
+        app:layout_constraintVertical_bias="0.591">
 
         <EditText
-            android:id="@+id/edtNombre"
+            android:id="@+id/editTextTextPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
+            android:layout_margin="15dp"
             android:ems="10"
-            android:hint="@string/Usuario"
+            android:hint="@string/NombreCompleto"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/edtPassword"
+            android:id="@+id/editTextTextPersonName2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_margin="15dp"
             android:ems="10"
-            android:hint="@string/Contraseña"
-            android:inputType="textPassword" />
+            android:hint="@string/Correo"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/btn_ingresar"
+            android:id="@+id/button7"
             style="@style/buttonA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="15dp"
+            android:layout_margin="10dp"
             android:background="@drawable/btn_accent"
-            android:text="@string/btn_ingrear"
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="@color/colorPrimaryLight" />
+            android:text="Button"
+            android:textColor="@color/colorPrimary" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button8"
             style="@style/buttonA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="15dp"
+            android:layout_margin="10dp"
             android:background="@drawable/btn_primary_accent"
-            android:text="@string/btn_Crear" />
+            android:text="Button"
+            android:textColor="@color/colorPrimaryLight" />
+
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView3"
-        style="@style/titlesPL"
+        android:id="@+id/textView4"
+        style="@style/titlesPD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/TituloInicioDeSesion"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/Registrate"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
