@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="100dp"
+    android:width="100dp"
+    android:viewportHeight="100"
+    android:viewportWidth="100">
+    <path
+        android:name="light_form"
+        android:fillColor="@color/colorAlert"
+        android:pathData="M 50,0 L 0,5 100,5 z"/>
+    <path
+        android:name="light_form"
+        android:fillColor="@color/colorAlert"
+        android:pathData="M 0,5 L 100,5 50,10 z" />
+</vector>
