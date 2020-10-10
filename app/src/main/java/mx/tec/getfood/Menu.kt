@@ -13,6 +13,10 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import mx.tec.getfood.elemento.adapter.CustomAdapter
+import mx.tec.getfood.elemento.model.Elemento
 
 class Menu : AppCompatActivity() {
 
@@ -41,6 +45,21 @@ class Menu : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val datos = listOf(
+            Elemento(1,"Element 1","Descripcion 1","$1", R.mipmap.ic_launcher),
+            Elemento(2,"Element 2","Descripcion 2", "$2", R.mipmap.ic_launcher),
+            Elemento(3,"Element 3","Descripcion 3","$3", R.mipmap.ic_launcher),
+            Elemento(4,"Element 4", "Descripcion 4","$4", R.mipmap.ic_launcher)
+        )
+
+        val rvLista = findViewById<RecyclerView>(R.id.rvLista)
+        val adaptador = CustomAdapter(this@Menu,
+            R.layout.layout_elemento, datos, R.anim.bounce)
+
+        rvLista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        rvLista.setHasFixedSize(true)
+        rvLista.adapter=adaptador
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
