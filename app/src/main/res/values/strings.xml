@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">Get Food</string>
+    <string name="name">GET FOOD</string>
     <string name="btnIniciar">Iniciar</string>
     <string name="btnContinuar">Continuar</string>
     <string name="confirmarE">Código registrado con éxito</string>
     <string name="confirmarN">No se registró intentelo de nuevo</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 
+    <string name="menu_home">Menu</string>
+    <string name="menu_gallery">Registrar código</string>
+    <string name="menu_slideshow">Escanear código</string>
+    <string name="menu_turno">Turno</string>
 </resources>
