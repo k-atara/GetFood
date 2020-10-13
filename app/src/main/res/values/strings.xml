@@ -12,6 +12,17 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    >//Pantalla log in>
+    <string name="Usuario">Usuario</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="TituloInicioDeSesion">Inicio de Sesion</string>
+    <string name="btn_ingrear">Ingresar</string>
+    <string name="btn_Crear">Registrate ahora</string>
+
+    >//Pantalla de Registro>
+<string name="Registrate">Registrate</string>
+    <string name="NombreCompleto">Nombre Completo</string>
+    <string name="Correo">Correo Electronico</string>
 
     <string name="menu_home">Menu</string>
     <string name="menu_gallery">Registrar código</string>

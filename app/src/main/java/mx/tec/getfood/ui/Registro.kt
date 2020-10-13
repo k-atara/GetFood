@@ -1,15 +1,12 @@
-package mx.tec.getfood
+package mx.tec.getfood.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import mx.tec.getfood.R
 
-class Confirmar : AppCompatActivity() {
+class Registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_confirmar)
-
-
+        setContentView(R.layout.activity_registro)
     }
 }
