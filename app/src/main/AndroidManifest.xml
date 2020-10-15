@@ -14,6 +14,7 @@
             android:name=".Menu"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
         <activity android:name=".Confirmar" />
         <activity android:name=".LogIn" />
