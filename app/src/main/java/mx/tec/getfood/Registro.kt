@@ -19,7 +19,7 @@ class Registro : AppCompatActivity() {
         }
 
         val b1=findViewById<Button>(R.id.btm_cancelar)
-        b0.setOnClickListener {
+        b1.setOnClickListener {
             val i = Intent(this@Registro, MainActivity::class.java)
 
             startActivity(i)

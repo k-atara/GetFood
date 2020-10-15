@@ -68,7 +68,7 @@
         <Button
             android:id="@+id/btm_cancelar"
             style="@style/buttonA"
-            android:layout_width="152dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
