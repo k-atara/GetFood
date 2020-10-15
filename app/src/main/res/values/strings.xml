@@ -23,6 +23,8 @@
 <string name="Registrate">Registrate</string>
     <string name="NombreCompleto">Nombre Completo</string>
     <string name="Correo">Correo Electronico</string>
+    <string name="NombreDeUsuario">Nombre De Usuario</string>
+    <string name="Regresar">Regresar</string>
 
     <string name="menu_home">Menu</string>
     <string name="menu_gallery">Registrar código</string>

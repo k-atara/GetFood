@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:foregroundGravity="center"
     tools:context=".ui.Registro">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="363dp"
         android:layout_height="452dp"
-        android:background="@drawable/laouy_creame_shape"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.591">
+        app:layout_constraintVertical_bias="0.616">
 
         <EditText
             android:id="@+id/editTextTextPersonName"
@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:ems="10"
+            android:hint="@string/NombreDeUsuario"
             android:inputType="textPersonName" />
 
         <EditText
@@ -51,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:ems="10"
+            android:hint="@string/Contraseña"
             android:inputType="textPersonName" />
 
         <Button
@@ -60,17 +62,19 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/btn_accent"
-            android:text="Button"
+            android:text="@string/Registrate"
             android:textColor="@color/colorPrimary" />
 
         <Button
             android:id="@+id/button8"
             style="@style/buttonA"
-            android:layout_width="match_parent"
+            android:layout_width="152dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/btn_primary_accent"
-            android:text="Button"
+            android:gravity="center"
+            android:text="@string/Regresar"
             android:textColor="@color/colorPrimaryLight" />
 
     </LinearLayout>
@@ -83,7 +87,7 @@
         android:text="@string/Registrate"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.646" />
 </androidx.constraintlayout.widget.ConstraintLayout>

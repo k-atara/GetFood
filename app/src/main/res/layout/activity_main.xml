@@ -7,43 +7,19 @@
     android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/titlesP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Food"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535" />
-
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/sub_titlesPL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <Button
         android:id="@+id/btnIniciar"
         style="@style/buttonA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginBottom="188dp"
         android:background="@drawable/btn_accent"
         android:hint="@string/btnIniciar"
         android:text="@string/btnIniciar"
         android:textColor="@color/colorPrimaryLight"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
