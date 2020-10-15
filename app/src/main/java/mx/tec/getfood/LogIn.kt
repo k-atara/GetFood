@@ -16,5 +16,12 @@ class LogIn : AppCompatActivity() {
             startActivity(i)
         }
 
+        val b1=findViewById<Button>(R.id.btn_reg)
+        b1.setOnClickListener {
+            val i = Intent(this@LogIn, Registro::class.java)
+
+            startActivity(i)
+        }
+
     }
 }
