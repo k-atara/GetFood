@@ -47,10 +47,11 @@ class Menu : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         val datos = listOf(
-            Elemento(1,"Element 1","Descripcion 1","$1", R.mipmap.ic_launcher),
-            Elemento(2,"Element 2","Descripcion 2", "$2", R.mipmap.ic_launcher),
-            Elemento(3,"Element 3","Descripcion 3","$3", R.mipmap.ic_launcher),
-            Elemento(4,"Element 4", "Descripcion 4","$4", R.mipmap.ic_launcher)
+            Elemento(1,"Element 1","Descripcion 1","$1", R.drawable.hamburguesa),
+            Elemento(2,"Element 2","Descripcion 2", "$2", R.drawable.ensalada),
+            Elemento(3,"Element 3","Descripcion 3","$3", R.drawable.burrito),
+            Elemento(3,"Element 4","Descripcion 4","$4", R.drawable.sandwich),
+            Elemento(4,"Element 5", "Descripcion 5","$5", R.drawable.pizza)
         )
 
         val rvLista = findViewById<RecyclerView>(R.id.rvLista)
