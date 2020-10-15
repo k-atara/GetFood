@@ -20,7 +20,7 @@
     <string name="btn_Crear">Registrate ahora</string>
 
     <!-- Pantalla de Registro-->
-<string name="Registrate">Registrate</string>
+    <string name="Registrate">Registrate</string>
     <string name="NombreCompleto">Nombre Completo</string>
     <string name="Correo">Correo Electronico</string>
     <string name="NombreDeUsuario">Nombre De Usuario</string>

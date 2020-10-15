@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Registro"></activity>
+        <activity android:name=".Platillo"></activity>
+        <activity android:name=".RegistrarCodigo" />
+        <activity android:name=".Turno" />
+        <activity android:name=".Registro" />
         <activity
             android:name=".Menu"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Confirmar" />
         <activity android:name=".LogIn" />
         <activity android:name=".MainActivity">
