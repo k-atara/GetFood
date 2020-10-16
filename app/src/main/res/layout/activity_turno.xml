@@ -9,17 +9,20 @@
 
     <Button
         android:id="@+id/idDone"
+        style="@style/buttonA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="Done"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/btn_primary_accent"
+        android:text="Hecho"
+        app:layout_constraintEnd_toEndOf="@+id/txtTiempo"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/txtTiempo"
         app:layout_constraintTop_toBottomOf="@+id/txtTiempo" />
 
     <TextView
         android:id="@+id/textView2"
+        style="@style/sub_titlesA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
@@ -32,6 +35,7 @@
 
     <TextView
         android:id="@+id/textView5"
+        style="@style/titlesPD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
@@ -43,6 +47,7 @@
 
     <TextView
         android:id="@+id/txtTiempo"
+        style="@style/titlesPL"
         android:layout_width="319dp"
         android:layout_height="56dp"
         android:layout_marginTop="68dp"
