@@ -1,22 +1,16 @@
-package mx.tec.getfood.ui.home
+package mx.tec.getfood
 
-import android.content.Context
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import mx.tec.getfood.R
 import mx.tec.getfood.elemento.adapter.CustomAdapter
 import mx.tec.getfood.elemento.model.Elemento
 
-class HomeFragment : Fragment() {
-
-    private lateinit var homeViewModel: HomeViewModel
-    private val mContext: Context? = null
+class PlatilloFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,8 +19,8 @@ class HomeFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val v = inflater.inflate(R.layout.fragment_home, container, false)
-        /*val lista: RecyclerView = v.findViewById(R.id.lvLista)
+        val v = inflater.inflate(R.layout.fragment_platillo, container, false)
+        val lista: RecyclerView = v.findViewById(R.id.lvLista)
 
         val datos = listOf(
             Elemento(1, "Element 1", "Descripcion 1", "$1", R.drawable.hamburguesa),
@@ -45,7 +39,7 @@ class HomeFragment : Fragment() {
 
         lista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         lista.setHasFixedSize(true)
-        lista.adapter=adaptador*/
+        lista.adapter=adaptador
 
         return v
     }
