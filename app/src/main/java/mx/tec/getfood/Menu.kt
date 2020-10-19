@@ -13,14 +13,20 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import mx.tec.getfood.elemento.adapter.CustomAdapter
 import mx.tec.getfood.elemento.model.Elemento
+import mx.tec.getfood.ui.home.HomeFragment
 
 class Menu : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    lateinit var  platilloFragment: PlatilloFragment
+    lateinit var bebidaFragment: BebidaFragment
+    lateinit var postreFragment: PostreFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,21 +52,43 @@ class Menu : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val datos = listOf(
-            Elemento(1,"Element 1","Descripcion 1","$1", R.drawable.hamburguesa),
-            Elemento(2,"Element 2","Descripcion 2", "$2", R.drawable.ensalada),
-            Elemento(3,"Element 3","Descripcion 3","$3", R.drawable.burrito),
-            Elemento(3,"Element 4","Descripcion 4","$4", R.drawable.sandwich),
-            Elemento(4,"Element 5", "Descripcion 5","$5", R.drawable.pizza)
-        )
+        platilloFragment = PlatilloFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_layout,platilloFragment)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()
 
-        val rvLista = findViewById<RecyclerView>(R.id.rvLista)
-        val adaptador = CustomAdapter(this@Menu,
-            R.layout.layout_elemento, datos, R.anim.bounce)
-
-        rvLista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-        rvLista.setHasFixedSize(true)
-        rvLista.adapter=adaptador
+        val bottomNavigation:BottomNavigationView = findViewById(R.id.btn_nav)
+        bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId){
+                R.id.platoFuerte -> {
+                    platilloFragment = PlatilloFragment()
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.frame_layout,platilloFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .commit()
+                }
+                R.id.bebidas -> {
+                    bebidaFragment = BebidaFragment()
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.frame_layout,bebidaFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .commit()
+                }
+                R.id.postres -> {
+                    postreFragment = PostreFragment()
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.frame_layout,postreFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .commit()
+                }
+            }
+            true
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
