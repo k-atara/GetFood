@@ -5,55 +5,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import mx.tec.getfood.elemento.adapter.CustomAdapter
+import mx.tec.getfood.elemento.model.Elemento
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PostreFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PostreFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_postre, container, false)
+        super.onCreateView(inflater, container, savedInstanceState)
+
+        val v = inflater.inflate(R.layout.fragment_postre, container, false)
+        val lista: RecyclerView = v.findViewById(R.id.lvLista)
+
+        val datos = listOf(
+            Elemento(1, "Helado", "Fresa, vainilla o cholate", "$15", R.drawable.helado),
+            Elemento(2, "Pastel", "tres leches o chocolate", "$20", R.drawable.pastel),
+            Elemento(3, "Pay de queso", "Solo hay de queso", "$30", R.drawable.pay),
+            Elemento(3, "Gelatina", "uva, fresa o naranja", "$24", R.drawable.gelatina),
+            Elemento(4, "Cupcakes", "vainalla o chocolate", "$15", R.drawable.cupkake)
+        )
+
+        val adaptador = getActivity()?.let {
+            CustomAdapter(
+                it,
+                R.layout.layout_elemento, datos, R.anim.bounce
+            )
+        }
+        lista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        lista.setHasFixedSize(true)
+        lista.adapter=adaptador
+
+        return v
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PostreFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PostreFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

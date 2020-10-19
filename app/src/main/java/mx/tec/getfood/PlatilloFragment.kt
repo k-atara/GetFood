@@ -23,11 +23,11 @@ class PlatilloFragment : Fragment() {
         val lista: RecyclerView = v.findViewById(R.id.lvLista)
 
         val datos = listOf(
-            Elemento(1, "Element 1", "Descripcion 1", "$1", R.drawable.hamburguesa),
-            Elemento(2, "Element 2", "Descripcion 2", "$2", R.drawable.ensalada),
-            Elemento(3, "Element 3", "Descripcion 3", "$3", R.drawable.burrito),
-            Elemento(3, "Element 4", "Descripcion 4", "$4", R.drawable.sandwich),
-            Elemento(4, "Element 5", "Descripcion 5", "$5", R.drawable.pizza)
+            Elemento(1, "Hamburguesa", "Se puede vegana", "$31", R.drawable.hamburguesa),
+            Elemento(2, "Ensalada", "Solo ensalada", "$24", R.drawable.ensalada),
+            Elemento(3, "Burrito", "Al pastor o con suadero", "$25", R.drawable.burrito),
+            Elemento(3, "Sandwich", "de jamon o con salchicas", "$24", R.drawable.sandwich),
+            Elemento(4, "Pizza", "Peperoni o Champiñon", "$25", R.drawable.pizza)
         )
 
         val adaptador = getActivity()?.let {
