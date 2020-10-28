@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/fondo_s"
     tools:context=".Confirmar">
 
     <TextView
         android:id="@+id/txtConfirmar"
-        style="@style/titlesPL"
-        android:layout_width="280dp"
-        android:layout_height="96dp"
+        style="@style/titlesPD"
+        android:layout_width="211dp"
+        android:layout_height="133dp"
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="@string/confirmarE"
