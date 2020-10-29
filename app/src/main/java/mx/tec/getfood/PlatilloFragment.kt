@@ -12,6 +12,9 @@ import mx.tec.getfood.elemento.model.Elemento
 
 class PlatilloFragment : Fragment() {
 
+    lateinit var adaptador: CustomAdapter
+    var rvLista: RecyclerView? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

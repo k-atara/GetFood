@@ -36,12 +36,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/menu_principal_navigation" />
 
+    <fragment
+        android:id="@+id/buton_nav"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/bar_navigation" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btn_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemBackground="@color/colorPrimaryLight"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
