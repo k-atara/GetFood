@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bar_navigation"
+    app:startDestination="@id/platoFuerte">
+
+    <fragment
+        android:id="@+id/platoFuerte"
+        android:name="mx.tec.getfood.PlatilloFragment"
+        android:label="fragment_platillo"
+        tools:layout="@layout/fragment_platillo" />
+    <fragment
+        android:id="@+id/postres"
+        android:name="mx.tec.getfood.PostreFragment"
+        android:label="fragment_postre"
+        tools:layout="@layout/fragment_postre" />
+    <fragment
+        android:id="@+id/bebidas"
+        android:name="mx.tec.getfood.BebidaFragment"
+        android:label="fragment_bebida"
+        tools:layout="@layout/fragment_bebida" />
+</navigation>
