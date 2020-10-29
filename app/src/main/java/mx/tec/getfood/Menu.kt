@@ -15,7 +15,6 @@ import androidx.navigation.ui.*
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.content_main.*
 import mx.tec.getfood.elemento.adapter.CustomAdapter
 import mx.tec.getfood.elemento.model.Elemento
 import mx.tec.getfood.ui.home.HomeFragment
@@ -32,7 +31,7 @@ class Menu : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        //val navView: NavigationView = findViewById(R.id.navigation_view)
+        val navView: NavigationView = findViewById(R.id.nav_view)
         //val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -42,25 +41,24 @@ class Menu : AppCompatActivity() {
         navController = findNavController(R.id.buton_nav)
         bottomNavigation.setupWithNavController(navController)
 
-        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-        NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        NavigationUI.setupActionBarWithNavController(this,navController)
         //setupActionBarWithNavController(navController, appBarConfiguration)
         //navView.setupWithNavController(navController)
 
-        //Drawer
-        NavigationUI.setupWithNavController(navigation_view, navController)
+
 
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu, menu)
         return true
-    }*/
+    }
 
     override fun onSupportNavigateUp(): Boolean {
         //val navController = findNavController(R.id.nav_host_fragment)
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
+        NavigationUI.navigateUp(navController, appBarConfiguration)
         //return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
