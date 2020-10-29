@@ -3,40 +3,127 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/platoFuerte">
 
     <fragment
         android:id="@+id/nav_home"
         android:name="mx.tec.getfood.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_nav_home_to_nav_gallery"
-            app:destination="@id/nav_gallery"
-            app:popUpTo="@id/nav_home" />
+            android:id="@+id/action_nav_home_to_platoFuerte"
+            app:destination="@id/platoFuerte" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_codigoqr"
+            app:destination="@id/nav_codigoqr" />
         <action
             android:id="@+id/action_nav_home_to_nav_turno"
             app:destination="@id/nav_turno" />
         <action
-            android:id="@+id/action_nav_home_to_nav_slideshow"
-            app:destination="@id/nav_slideshow" />
+            android:id="@+id/action_nav_home_to_galleryFragment"
+            app:destination="@id/nav_codigo" />
     </fragment>
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="mx.tec.getfood.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="mx.tec.getfood.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_turno"
         android:name="mx.tec.getfood.ui.turno.Turno"
-        android:label="@string/menu_turno"
-        tools:layout="@layout/fragment_turno" />
+        android:label="Turno"
+        tools:layout="@layout/fragment_turno">
+        <action
+            android:id="@+id/action_nav_turno_to_platoFuerte"
+            app:destination="@id/platoFuerte" />
+        <action
+            android:id="@+id/action_nav_turno_to_nav_codigoqr"
+            app:destination="@id/nav_codigoqr" />
+        <action
+            android:id="@+id/action_nav_turno_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_turno_to_galleryFragment"
+            app:destination="@id/nav_codigo" />
+    </fragment>
+    <fragment
+        android:id="@+id/platoFuerte"
+        android:name="mx.tec.getfood.PlatilloFragment"
+        android:label="@string/menu_platillos"
+        tools:layout="@layout/fragment_platillo">
+        <action
+            android:id="@+id/action_platoFuerte_to_bebidas"
+            app:destination="@id/bebidas" />
+        <action
+            android:id="@+id/action_platoFuerte_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_platoFuerte_to_postreFragment2"
+            app:destination="@id/postres" />
+        <action
+            android:id="@+id/action_platoFuerte_to_nav_gallery2"
+            app:destination="@id/nav_codigo" />
+        <action
+            android:id="@+id/action_platoFuerte_to_nav_turno"
+            app:destination="@id/nav_turno" />
+        <action
+            android:id="@+id/action_platoFuerte_to_nav_codigoqr"
+            app:destination="@id/nav_codigoqr" />
+        <action
+            android:id="@+id/action_platoFuerte_to_galleryFragment"
+            app:destination="@id/nav_codigo" />
+    </fragment>
+    <fragment
+        android:id="@+id/bebidas"
+        android:name="mx.tec.getfood.BebidaFragment"
+        android:label="@string/menu_bebidas"
+        tools:layout="@layout/fragment_bebida">
+        <action
+            android:id="@+id/action_bebidas_to_postres"
+            app:destination="@id/postres" />
+        <action
+            android:id="@+id/action_bebidas_to_platoFuerte"
+            app:destination="@id/platoFuerte" />
+    </fragment>
+    <fragment
+        android:id="@+id/postres"
+        android:name="mx.tec.getfood.PostreFragment"
+        android:label="@string/menu_postres"
+        tools:layout="@layout/fragment_postre">
+        <action
+            android:id="@+id/action_postres_to_bebidas"
+            app:destination="@id/bebidas" />
+        <action
+            android:id="@+id/action_postres_to_platoFuerte"
+            app:destination="@id/platoFuerte" />
+        <action
+            android:id="@+id/action_postres_to_platoFuerte2"
+            app:destination="@id/platoFuerte" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_codigoqr"
+        android:name="mx.tec.getfood.ui.slideshow.SlideshowFragment"
+        android:label="Código qr"
+        tools:layout="@layout/fragment_codigoqr">
+        <action
+            android:id="@+id/action_nav_codigoqr_to_platoFuerte"
+            app:destination="@id/platoFuerte" />
+        <action
+            android:id="@+id/action_nav_codigoqr_to_nav_turno"
+            app:destination="@id/nav_turno" />
+        <action
+            android:id="@+id/action_nav_codigoqr_to_galleryFragment"
+            app:destination="@id/nav_codigo" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_codigo"
+        android:name="mx.tec.getfood.ui.gallery.GalleryFragment"
+        android:label="Código"
+        tools:layout="@layout/fragment_codigo">
+        <action
+            android:id="@+id/action_galleryFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_galleryFragment_to_nav_codigoqr"
+            app:destination="@id/nav_codigoqr" />
+        <action
+            android:id="@+id/action_galleryFragment_to_nav_turno"
+            app:destination="@id/nav_turno" />
+    </fragment>
 </navigation>

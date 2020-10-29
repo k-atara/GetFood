@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import mx.tec.getfood.R
 import mx.tec.getfood.elemento.adapter.CustomAdapter
-import mx.tec.getfood.elemento.model.Elemento
 
 class HomeFragment : Fragment() {
 
@@ -26,26 +26,21 @@ class HomeFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
 
         val v = inflater.inflate(R.layout.fragment_home, container, false)
-        /*val lista: RecyclerView = v.findViewById(R.id.lvLista)
 
-        val datos = listOf(
-            Elemento(1, "Element 1", "Descripcion 1", "$1", R.drawable.hamburguesa),
-            Elemento(2, "Element 2", "Descripcion 2", "$2", R.drawable.ensalada),
-            Elemento(3, "Element 3", "Descripcion 3", "$3", R.drawable.burrito),
-            Elemento(3, "Element 4", "Descripcion 4", "$4", R.drawable.sandwich),
-            Elemento(4, "Element 5", "Descripcion 5", "$5", R.drawable.pizza)
+        /*val bottomNavigation: BottomNavigationView = v.findViewById(R.id.btn_nav)
+        val navController = Navigation.findNavController(
+            requireActivity(),
+            R.id.buton_nav
         )
-
-        val adaptador = getActivity()?.let {
-            CustomAdapter(
+       val navigationController = getActivity()?.let {
+            findNavController(
                 it,
-                R.layout.layout_elemento, datos, R.anim.bounce
+                R.id.buton_nav
             )
         }
-
-        lista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-        lista.setHasFixedSize(true)
-        lista.adapter=adaptador*/
+        if (navController != null) {
+            bottomNavigation.setupWithNavController(navController)
+        }*/
 
         return v
     }

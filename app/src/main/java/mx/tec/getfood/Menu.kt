@@ -2,31 +2,21 @@ package mx.tec.getfood
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.FragmentTransaction
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.navigation.Navigation
+import androidx.navigation.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import mx.tec.getfood.elemento.adapter.CustomAdapter
-import mx.tec.getfood.elemento.model.Elemento
-import mx.tec.getfood.ui.home.HomeFragment
 
 class Menu : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    lateinit var  platilloFragment: PlatilloFragment
-    lateinit var bebidaFragment: BebidaFragment
-    lateinit var postreFragment: PostreFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,58 +31,25 @@ class Menu : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_turno
+                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.nav_codigoqr, R.id.nav_turno
             ), drawerLayout
         )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-
         val bottomNavigation: BottomNavigationView = findViewById(R.id.btn_nav)
+        //val navController1 = findNavController(R.id.buton_nav)
+        bottomNavigation.setupWithNavController(navController)
 
-        val navController1 = findNavController(R.id.buton_nav)
-
-        bottomNavigation.setupWithNavController(navController1)
-
-        /*
-        platilloFragment = PlatilloFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.frame_layout,platilloFragment)
-            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-            .commit()
-
-        val bottomNavigation:BottomNavigationView = findViewById(R.id.btn_nav)
-        bottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId){
-                R.id.platoFuerte -> {
-                    platilloFragment = PlatilloFragment()
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.frame_layout,platilloFragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
-                R.id.bebidas -> {
-                    bebidaFragment = BebidaFragment()
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.frame_layout,bebidaFragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
-                R.id.postres -> {
-                    postreFragment = PostreFragment()
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.frame_layout,postreFragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.nav_home || destination.id == R.id.nav_codigoqr || destination.id == R.id.nav_turno || destination.id == R.id.nav_codigo) {
+                bottomNavigation.visibility = View.GONE
+            }else {
+                bottomNavigation.visibility = View.VISIBLE
             }
-            true
-        }*/
+        }
+        //
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
