@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/platoFuerte"
         android:name="mx.tec.getfood.PlatilloFragment"
-        android:label="fragment_platillo"
+        android:label="Platillos"
         tools:layout="@layout/fragment_platillo" />
     <fragment
         android:id="@+id/postres"
         android:name="mx.tec.getfood.PostreFragment"
-        android:label="fragment_postre"
+        android:label="Postres"
         tools:layout="@layout/fragment_postre" />
     <fragment
         android:id="@+id/bebidas"
         android:name="mx.tec.getfood.BebidaFragment"
-        android:label="fragment_bebida"
+        android:label="Bebidas"
         tools:layout="@layout/fragment_bebida" />
 </navigation>
