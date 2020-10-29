@@ -11,7 +11,6 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import mx.tec.getfood.R
 import mx.tec.getfood.elemento.model.Elemento
-import mx.tec.getfood.ui.home.HomeFragment
 
 class CustomAdapter(private val context: Context,
                     private val layout: Int,

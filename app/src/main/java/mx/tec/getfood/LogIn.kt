@@ -11,7 +11,7 @@ class LogIn : AppCompatActivity() {
         setContentView(R.layout.activity_log_in)
         val b0=findViewById<Button>(R.id.btn_ingresar)
         b0.setOnClickListener {
-            val i = Intent(this@LogIn, Menu::class.java)
+            val i = Intent(this@LogIn,Menu::class.java)
 
             startActivity(i)
         }
