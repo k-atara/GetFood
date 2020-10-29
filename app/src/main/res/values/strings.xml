@@ -31,6 +31,12 @@
     <string name="menu_gallery">Registrar código</string>
     <string name="menu_slideshow">Escanear código</string>
     <string name="menu_turno">Turno</string>
+    <string name="menu_platillos">Platillos</string>
+    <string name="menu_postres">Postres</string>
+    <string name="menu_bebidas">Bebidas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="txt_codigo">Ingresar Código</string>
+    <string name="edt_codigo">Ingresa código aquí</string>
 </resources>
