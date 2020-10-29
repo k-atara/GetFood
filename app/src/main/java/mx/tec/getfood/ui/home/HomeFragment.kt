@@ -47,6 +47,7 @@ class HomeFragment : Fragment() {
         lista.setHasFixedSize(true)
         lista.adapter=adaptador*/
 
+
         return v
     }
 }
