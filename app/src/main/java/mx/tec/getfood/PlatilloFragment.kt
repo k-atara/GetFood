@@ -18,7 +18,7 @@ import org.json.JSONArray
 
 class PlatilloFragment : Fragment() {
 
-    lateinit var adaptador: CustomAdapter
+    //lateinit var adaptador: CustomAdapter
     var lista: RecyclerView? = null
 
     override fun onCreateView(
@@ -62,10 +62,10 @@ class PlatilloFragment : Fragment() {
                 )
             }
             //adaptador.notifyDataSetChanged()
-            lista!!.layoutManager =
+            lista?.layoutManager =
                 StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-            lista!!.setHasFixedSize(true)
-            lista!!.adapter = adaptador
+            lista?.setHasFixedSize(true)
+            lista?.adapter = adaptador
         }
 
         val error = Response.ErrorListener { error ->

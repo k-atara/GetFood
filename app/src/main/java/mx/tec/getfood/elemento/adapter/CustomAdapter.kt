@@ -1,9 +1,12 @@
 package mx.tec.getfood.elemento.adapter
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.util.Base64
 import android.util.Base64.decode
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -13,6 +16,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import mx.tec.getfood.R
 import mx.tec.getfood.elemento.model.Elemento
+import java.io.File
+import java.util.Base64.getDecoder
 
 
 class CustomAdapter(
@@ -39,9 +44,10 @@ class CustomAdapter(
         }
 
         fun bindData(elemento: Elemento){
-            val imageBytes = decode(elemento.imagen, Base64.DEFAULT)
-            val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-            imagen!!.setImageBitmap(decodedImage)
+            val img = elemento.imagen
+            val imageBytes = Base64.decode(img,Base64.DEFAULT)
+            val decodedBitmap = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.size)
+            imagen!!.setImageBitmap(decodedBitmap)
             nombre!!.text = elemento.nombre
             descripcion!!.text = elemento.descripcion
             costo!!.text = elemento.costo
