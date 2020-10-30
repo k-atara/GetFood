@@ -7,19 +7,6 @@
     android:background="@drawable/fondo_s"
     tools:context=".ui.turno.Turno">
 
-    <Button
-        android:id="@+id/idDone"
-        style="@style/buttonA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/btn_primary_accent"
-        android:text="Hecho"
-        app:layout_constraintEnd_toEndOf="@+id/txtTiempo"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="@+id/txtTiempo"
-        app:layout_constraintTop_toBottomOf="@+id/txtTiempo" />
-
     <TextView
         android:id="@+id/textView2"
         style="@style/sub_titlesA"
