@@ -4,6 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondodark_s"
     tools:context=".Pedido">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="260dp"
+        android:layout_height="57dp"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/laouy_creame_shape"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/Turno"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rec_pedido"
+        app:layout_constraintStart_toStartOf="@+id/rec_pedido"
+        app:layout_constraintTop_toBottomOf="@+id/rec_pedido"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_pedido"
+        android:layout_width="408dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:fontFamily="@font/raleway_black"
+        android:text="@string/Ordene_aqui"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
