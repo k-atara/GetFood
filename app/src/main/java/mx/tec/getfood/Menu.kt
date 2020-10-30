@@ -1,7 +1,9 @@
 package mx.tec.getfood
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -31,7 +33,8 @@ class Menu : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.nav_codigoqr, R.id.nav_turno
+                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.nav_codigoqr, R.id.nav_turno,
+            R.id.action_settings
             ), drawerLayout
         )
 
@@ -58,6 +61,17 @@ class Menu : AppCompatActivity() {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_settings->{
+                val i= Intent(this@Menu,Pedido::class.java)
+                startActivity(i)
+                return true
+            }
+            else->  return super.onOptionsItemSelected(item)
+        }
+
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

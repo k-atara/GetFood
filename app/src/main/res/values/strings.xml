@@ -34,6 +34,11 @@
     <string name="menu_platillos">Platillos</string>
     <string name="menu_postres">Postres</string>
     <string name="menu_bebidas">Bebidas</string>
+
+    <!-- Pantalla Pedido-->
+    <string name="Ordene_aqui">Su orden</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
