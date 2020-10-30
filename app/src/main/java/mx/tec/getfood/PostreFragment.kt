@@ -64,7 +64,7 @@ class PostreFragment : Fragment() {
         val listener = Response.Listener<JSONArray> { response ->
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
-                var postre = Elemento(
+                /*var postre = Elemento(
                     id = response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
@@ -72,7 +72,7 @@ class PostreFragment : Fragment() {
                     puntos = response.getJSONObject(i).getString("puntos"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
-                postres.add(postre)
+                postres.add(postre)*/
             }
             val adaptador = getActivity()?.let {
                 CustomAdapter(

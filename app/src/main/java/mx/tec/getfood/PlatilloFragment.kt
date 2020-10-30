@@ -66,7 +66,7 @@ class PlatilloFragment : Fragment() {
         val listener = Response.Listener<JSONArray> { response ->
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
-                var platillo = Elemento(
+                /*var platillo = Elemento(
                     id = response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
@@ -74,7 +74,7 @@ class PlatilloFragment : Fragment() {
                     puntos = response.getJSONObject(i).getString("puntos"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
-                platillos.add(platillo)
+                platillos.add(platillo)*/
             }
             val adaptador = getActivity()?.let {
                 CustomAdapter(

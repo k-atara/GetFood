@@ -33,7 +33,7 @@ class BebidaFragment : Fragment() {
 
         val datos = listOf(
             Elemento(1, "Refresco", "Coca, sidralo naranja", "$15", "20", R.drawable.soda),
-            Elemento(2, "Jugo", "Manzana, naranja o mango", "$17""20",  R.drawable.jugo),
+            Elemento(2, "Jugo", "Manzana, naranja o mango", "$17","20",  R.drawable.jugo),
             Elemento(3, "Limonada", "Rosa o normal", "$23","20",  R.drawable.limonada),
             Elemento(3, "Moca", "Se puede descafeinada", "$24","20",  R.drawable.moca),
             Elemento(4, "Cerveza de Raiz", "No vendemos de verdad", "$30","20",  R.drawable.raiz)
@@ -64,7 +64,7 @@ class BebidaFragment : Fragment() {
         val listener = Response.Listener<JSONArray> { response ->
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
-                var bebida = Elemento(
+                /*var bebida = Elemento(
                     id = response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
@@ -72,7 +72,7 @@ class BebidaFragment : Fragment() {
                     puntos = response.getJSONObject(i).getString("puntos"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
-                bebidas.add(bebida)
+                bebidas.add(bebida)*/
             }
             val adaptador = getActivity()?.let {
                 CustomAdapter(

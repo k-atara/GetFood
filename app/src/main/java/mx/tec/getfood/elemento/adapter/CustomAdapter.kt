@@ -47,7 +47,8 @@ class CustomAdapter(
             val img = elemento.imagen
             //val imageBytes = Base64.decode(img,Base64.DEFAULT)
             //val decodedBitmap = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.size)
-            imagen!!.setImageBitmap(img)
+            //imagen!!.setImageBitmap(img)
+            imagen!!.setImageResource(img)
             nombre!!.text = elemento.nombre
             descripcion!!.text = elemento.descripcion
             costo!!.text = elemento.costo
