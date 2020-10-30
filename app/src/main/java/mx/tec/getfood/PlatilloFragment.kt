@@ -30,7 +30,28 @@ class PlatilloFragment : Fragment() {
 
         val v = inflater.inflate(R.layout.fragment_platillo, container, false)
 
-        showData(v)
+        val lista: RecyclerView = v.findViewById(R.id.lvLista)
+
+        val datos = listOf(
+            Elemento(1, "Hamburguesa", "Se puede vegana", "$31","20",  R.drawable.hamburguesa),
+            Elemento(2, "Ensalada", "Solo ensalada", "$24","20",  R.drawable.ensalada),
+            Elemento(3, "Burrito", "Al pastor o con suadero", "$25","20",  R.drawable.burrito),
+            Elemento(3, "Sandwich", "de jamon o con salchicas", "$24","20",  R.drawable.sandwich),
+            Elemento(4, "Pizza", "Peperoni o Champiñon", "$25","20",  R.drawable.pizza)
+        )
+
+        val adaptador = getActivity()?.let {
+            CustomAdapter(
+                it,
+                R.layout.layout_elemento, datos, R.anim.bounce
+            )
+        }
+
+        lista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        lista.setHasFixedSize(true)
+        lista.adapter=adaptador
+
+        //showData(v)
 
         return v
     }

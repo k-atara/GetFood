@@ -30,7 +30,26 @@ class PostreFragment : Fragment() {
 
         val v = inflater.inflate(R.layout.fragment_postre, container, false)
 
-        showData(v)
+        val lista: RecyclerView = v.findViewById(R.id.lvLista)
+
+        val datos = listOf(
+            Elemento(1, "Helado", "Fresa, vainilla o cholate", "$15","20",  R.drawable.helado),
+            Elemento(2, "Pastel", "tres leches o chocolate", "$20","20",  R.drawable.pastel),
+            Elemento(3, "Pay de queso", "Solo hay de queso", "$30","20",  R.drawable.pay),
+            Elemento(3, "Gelatina", "uva, fresa o naranja", "$24","20",  R.drawable.gelatina),
+            Elemento(4, "Cupcakes", "vainalla o chocolate", "$15","20",  R.drawable.cupkake)
+        )
+
+        val adaptador = getActivity()?.let {
+            CustomAdapter(
+                it,
+                R.layout.layout_elemento, datos, R.anim.bounce
+            )
+        }
+        lista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        lista.setHasFixedSize(true)
+        lista.adapter=adaptador
+        //showData(v)
 
         return v
     }

@@ -5,5 +5,5 @@ data class Elemento(val id: Int,
                     val descripcion: String,
                     val costo: String,
                     val puntos: String,
-                    val imagen: String) {
+                    val imagen: Int) {
 }
