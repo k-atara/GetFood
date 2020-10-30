@@ -8,7 +8,7 @@
     tools:context=".Pedido">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_turno"
         android:layout_width="260dp"
         android:layout_height="57dp"
         android:layout_gravity="center|center_horizontal"
