@@ -36,8 +36,7 @@
     <string name="menu_bebidas">Bebidas</string>
 
     <!-- Pantalla Pedido-->
-    <string name="Ordene_aqui">Ordene aqui</string>
-    <string name="Turno">Su Turno</string>
+    <string name="Ordene_aqui">Su orden</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

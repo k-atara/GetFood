@@ -15,16 +15,16 @@
         android:layout_marginTop="48dp"
         android:background="@drawable/laouy_creame_shape"
         android:fontFamily="@font/raleway_bold"
-        android:text="@string/Turno"
+        android:text="@string/Regresar"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/rec_pedido"
-        app:layout_constraintStart_toStartOf="@+id/rec_pedido"
-        app:layout_constraintTop_toBottomOf="@+id/rec_pedido"
+        app:layout_constraintEnd_toEndOf="@+id/lvLista"
+        app:layout_constraintStart_toStartOf="@+id/lvLista"
+        app:layout_constraintTop_toBottomOf="@+id/lvLista"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rec_pedido"
+        android:id="@+id/lvLista"
         android:layout_width="408dp"
         android:layout_height="172dp"
         android:layout_marginTop="40dp"
