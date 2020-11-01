@@ -42,7 +42,7 @@
         app:srcCompat="@drawable/grafico" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/edt_codigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -54,15 +54,15 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_codigo"
         style="@style/buttonA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_primary_accent"
-        android:text="Ingresar"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        android:text="@string/btn_ingresar"
+        app:layout_constraintEnd_toEndOf="@+id/edt_codigo"
+        app:layout_constraintStart_toStartOf="@+id/edt_codigo"
+        app:layout_constraintTop_toBottomOf="@+id/edt_codigo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
