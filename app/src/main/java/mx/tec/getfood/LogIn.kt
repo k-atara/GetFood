@@ -30,19 +30,7 @@ class LogIn : AppCompatActivity() {
             val contra = edtContrasena.text.toString()
 
             if (usuario != "" && contra != "") {
-                val res= addPersona(usuario, contra)
-                Toast.makeText(this@LogIn, res, Toast.LENGTH_SHORT).show()
-
-                val sp = getSharedPreferences("archivo", Context.MODE_PRIVATE)
-
-                with(sp.edit()) {
-                    putString("Usuario", usuario)
-                    putString("Password", contra)
-                    commit()
-                }
-
-                val i = Intent(this@LogIn, Menu::class.java)
-                startActivity(i)
+               addPersona(usuario, contra)
             }else{
                 Toast.makeText(this@LogIn, "Completa los campos", Toast.LENGTH_SHORT).show()
             }
@@ -57,25 +45,36 @@ class LogIn : AppCompatActivity() {
         }
 
     }
-    fun addPersona(usuario:String, contra:String): String{
+    fun addPersona(usuario:String, contra:String){
 
         var json = JSONObject()
         json.put("usuario", usuario)
         json.put("contra", contra)
 
-        var resp = "";
+        var resp = ""
         val uri = "http://10.0.2.2/getfood/login"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
             Log.e("Mensaje", response.toString())
-            Toast.makeText(this@LogIn, response.toString(), Toast.LENGTH_SHORT).show()
 
-            if(response.toString().contains("correcto"))
-            {
-                Log.e("Mensaje", "correcto")
-                resp="Ingreso correcto"
+            if(response.toString().contains("correcto")){
+                Toast.makeText(this@LogIn, "Bienvenido", Toast.LENGTH_SHORT).show()
+                val sp = getSharedPreferences("archivo", Context.MODE_PRIVATE)
+
+                with(sp.edit()) {
+                    putString("Usuario", usuario)
+                    putString("Password", contra)
+                    commit()
+                }
+
+                val i = Intent(this@LogIn, Menu::class.java)
+                startActivity(i)
             }
-
+            if(response.toString().contains("usuario"))
+                Toast.makeText(this@LogIn, "El usuario no existe", Toast.LENGTH_SHORT).show()
+            if(response.toString().contains("contra"))
+                Toast.makeText(this@LogIn, "Contraseña incorrecta", Toast.LENGTH_SHORT).show()
+            Log.e("Mensaje", resp)
         }
         val error = Response.ErrorListener { error ->
             Log.e("Mensaje", error.message!!)
@@ -83,6 +82,5 @@ class LogIn : AppCompatActivity() {
 
         val request = JsonObjectRequest(Request.Method.POST, uri, json, listener, error)
         queue.add(request)
-        return resp
     }
 }

@@ -5,7 +5,7 @@
     <string name="btnContinuar">Continuar</string>
     <string name="confirmarE">Código registrado con éxito</string>
     <string name="confirmarN">No se registró intentelo de nuevo</string>
-    <string name="title_activity_menu">Menu</string>
+    <string name="title_activity_menu">Menú</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -15,7 +15,7 @@
     <!-- Pantalla log in -->
     <string name="Usuario">Usuario</string>
     <string name="Contraseña">Contraseña</string>
-    <string name="TituloInicioDeSesion">Inicio de Sesion</string>
+    <string name="TituloInicioDeSesion">Inicio de Sesión</string>
     <string name="btn_ingresar">Ingresar</string>
     <string name="btn_Crear">Registrate ahora</string>
 
@@ -27,7 +27,7 @@
     <string name="Regresar">Regresar</string>
 
     <!-- Pantalla de Menu y Registro-->
-    <string name="menu_home">Menu</string>
+    <string name="menu_home">Menú</string>
     <string name="menu_orden">Orden</string>
     <string name="menu_gallery">Registrar código</string>
     <string name="menu_slideshow">Escanear código</string>
