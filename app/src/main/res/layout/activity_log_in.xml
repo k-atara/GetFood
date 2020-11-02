@@ -50,7 +50,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="15dp"
             android:background="@drawable/btn_accent"
-            android:text="@string/btn_ingrear"
+            android:text="@string/btn_ingresar"
             android:textColor="@color/colorPrimary"
             android:textColorHint="@color/colorPrimaryLight" />
 

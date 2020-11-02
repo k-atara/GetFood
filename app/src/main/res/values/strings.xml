@@ -16,7 +16,7 @@
     <string name="Usuario">Usuario</string>
     <string name="Contraseña">Contraseña</string>
     <string name="TituloInicioDeSesion">Inicio de Sesion</string>
-    <string name="btn_ingrear">Ingresar</string>
+    <string name="btn_ingresar">Ingresar</string>
     <string name="btn_Crear">Registrate ahora</string>
 
     <!-- Pantalla de Registro-->
