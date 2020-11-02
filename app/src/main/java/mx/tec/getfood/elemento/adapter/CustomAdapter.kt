@@ -45,10 +45,10 @@ class CustomAdapter(
 
         fun bindData(elemento: Elemento){
             val img = elemento.imagen
-            //val imageBytes = Base64.decode(img,Base64.DEFAULT)
-            //val decodedBitmap = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.size)
-            //imagen!!.setImageBitmap(img)
-            imagen!!.setImageResource(img)
+            val imageBytes = Base64.decode(img,Base64.DEFAULT)
+            val decodedBitmap = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.size)
+            imagen!!.setImageBitmap(decodedBitmap)
+            //imagen!!.setImageResource(img)
             nombre!!.text = elemento.nombre
             descripcion!!.text = elemento.descripcion
             costo!!.text = elemento.costo

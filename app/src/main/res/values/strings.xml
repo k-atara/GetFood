@@ -11,7 +11,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">getfood.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
     <!-- Pantalla log in -->
     <string name="Usuario">Usuario</string>
     <string name="Contraseña">Contraseña</string>
@@ -28,6 +28,7 @@
 
     <!-- Pantalla de Menu y Registro-->
     <string name="menu_home">Menu</string>
+    <string name="menu_orden">Orden</string>
     <string name="menu_gallery">Registrar código</string>
     <string name="menu_slideshow">Escanear código</string>
     <string name="menu_turno">Turno</string>

@@ -30,7 +30,7 @@ class PlatilloFragment : Fragment() {
 
         val v = inflater.inflate(R.layout.fragment_platillo, container, false)
 
-        val lista: RecyclerView = v.findViewById(R.id.lvLista)
+        /*val lista: RecyclerView = v.findViewById(R.id.lvLista)
 
         val datos = listOf(
             Elemento(1, "Hamburguesa", "Se puede vegana", "$31","20",  R.drawable.hamburguesa),
@@ -49,9 +49,9 @@ class PlatilloFragment : Fragment() {
 
         lista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         lista.setHasFixedSize(true)
-        lista.adapter=adaptador
+        lista.adapter=adaptador**/
 
-        //showData(v)
+        showData(v)
 
         return v
     }
@@ -66,7 +66,7 @@ class PlatilloFragment : Fragment() {
         val listener = Response.Listener<JSONArray> { response ->
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
-                /*var platillo = Elemento(
+                var platillo = Elemento(
                     id = response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
@@ -74,7 +74,7 @@ class PlatilloFragment : Fragment() {
                     puntos = response.getJSONObject(i).getString("puntos"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
-                platillos.add(platillo)*/
+                platillos.add(platillo)
             }
             val adaptador = getActivity()?.let {
                 CustomAdapter(

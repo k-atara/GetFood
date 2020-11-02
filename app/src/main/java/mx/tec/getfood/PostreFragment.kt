@@ -30,26 +30,7 @@ class PostreFragment : Fragment() {
 
         val v = inflater.inflate(R.layout.fragment_postre, container, false)
 
-        val lista: RecyclerView = v.findViewById(R.id.lvLista)
-
-        val datos = listOf(
-            Elemento(1, "Helado", "Fresa, vainilla o cholate", "$15","20",  R.drawable.helado),
-            Elemento(2, "Pastel", "tres leches o chocolate", "$20","20",  R.drawable.pastel),
-            Elemento(3, "Pay de queso", "Solo hay de queso", "$30","20",  R.drawable.pay),
-            Elemento(3, "Gelatina", "uva, fresa o naranja", "$24","20",  R.drawable.gelatina),
-            Elemento(4, "Cupcakes", "vainalla o chocolate", "$15","20",  R.drawable.cupkake)
-        )
-
-        val adaptador = getActivity()?.let {
-            CustomAdapter(
-                it,
-                R.layout.layout_elemento, datos, R.anim.bounce
-            )
-        }
-        lista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-        lista.setHasFixedSize(true)
-        lista.adapter=adaptador
-        //showData(v)
+        showData(v)
 
         return v
     }
@@ -64,7 +45,7 @@ class PostreFragment : Fragment() {
         val listener = Response.Listener<JSONArray> { response ->
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
-                /*var postre = Elemento(
+                var postre = Elemento(
                     id = response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
@@ -72,7 +53,7 @@ class PostreFragment : Fragment() {
                     puntos = response.getJSONObject(i).getString("puntos"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
-                postres.add(postre)*/
+                postres.add(postre)
             }
             val adaptador = getActivity()?.let {
                 CustomAdapter(
