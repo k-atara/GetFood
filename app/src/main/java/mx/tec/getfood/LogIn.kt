@@ -1,5 +1,6 @@
 package mx.tec.getfood
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,11 +29,24 @@ class LogIn : AppCompatActivity() {
             val usuario = edtUsuario.text.toString()
             val contra = edtContrasena.text.toString()
 
-            val res= addPersona(usuario, contra)
-            Toast.makeText(this@LogIn, res, Toast.LENGTH_SHORT).show()
+            if (usuario != "" && contra != "") {
+                val res= addPersona(usuario, contra)
+                Toast.makeText(this@LogIn, res, Toast.LENGTH_SHORT).show()
 
-            val i = Intent(this@LogIn, Menu::class.java)
-            startActivity(i)
+                val sp = getSharedPreferences("archivo", Context.MODE_PRIVATE)
+
+                with(sp.edit()) {
+                    putString("Usuario", usuario)
+                    putString("Password", contra)
+                    commit()
+                }
+
+                val i = Intent(this@LogIn, Menu::class.java)
+                startActivity(i)
+            }else{
+                Toast.makeText(this@LogIn, "Completa los campos", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         val btnRegistrarse=findViewById<Button>(R.id.btn_reg)
@@ -53,11 +67,15 @@ class LogIn : AppCompatActivity() {
         val uri = "http://10.0.2.2/getfood/login"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
-            Log.e("Mensaje", response.getJSONObject("Value").getString("1"))
-            resp=response.toString()
-            Log.e("Mensaje", resp)
-            if(resp.equals(""))
+            Log.e("Mensaje", response.toString())
+            Toast.makeText(this@LogIn, response.toString(), Toast.LENGTH_SHORT).show()
+
+            if(response.toString().contains("correcto"))
+            {
+                Log.e("Mensaje", "correcto")
                 resp="Ingreso correcto"
+            }
+
         }
         val error = Response.ErrorListener { error ->
             Log.e("Mensaje", error.message!!)
@@ -65,6 +83,6 @@ class LogIn : AppCompatActivity() {
 
         val request = JsonObjectRequest(Request.Method.POST, uri, json, listener, error)
         queue.add(request)
-        return resp;
+        return resp
     }
 }

@@ -27,14 +27,6 @@ class MainActivity : AppCompatActivity() {
                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(i)
             }
-                //val Usuario = edtUsuario.text.toString()
-                //val Contra = edtPassword.text.toString()
-
-                /*with(sp.edit()) {
-                    putString("Usuario", Usuario)
-                    putString("Password", Contra)
-                    commit()
-                }*/
         }else{
             b0.setOnClickListener {
                 val i = Intent(this@MainActivity, Menu::class.java)

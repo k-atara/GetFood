@@ -1,5 +1,6 @@
 package mx.tec.getfood
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -63,6 +64,14 @@ class Menu : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_logout->{
+                val sp = getSharedPreferences("archivo", Context.MODE_PRIVATE)
+
+                with(sp.edit()) {
+                    remove("Usuario")
+                    remove("Password")
+                    commit()
+                }
+
                 val i= Intent(this@Menu,MainActivity::class.java)
                 startActivity(i)
                 return true
