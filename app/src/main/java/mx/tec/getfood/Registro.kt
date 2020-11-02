@@ -10,7 +10,6 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_registro.*
-import mx.tec.getfood.R
 import org.json.JSONObject
 
 class Registro : AppCompatActivity() {
@@ -18,12 +17,9 @@ class Registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-
-
-
         val b0=findViewById<Button>(R.id.btn_registro)
         b0.setOnClickListener {
-            val nombre = edtNombre.text.toString()
+            val nombre = edtUsuario.text.toString()
             val correo = edtCorreo.text.toString()
             val usuario = edtUsuario.text.toString()
             var contrasena = edtContrasena.text.toString()

@@ -11,7 +11,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">getfood.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_logout">Logout</string>
+    <string name="action_logout">Cerrar sesión</string>
     <!-- Pantalla log in -->
     <string name="Usuario">Usuario</string>
     <string name="Contraseña">Contraseña</string>
