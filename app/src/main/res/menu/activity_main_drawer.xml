@@ -17,6 +17,10 @@
             android:icon="@drawable/ic_baseline_center_focus_weak_24"
             android:title="@string/menu_slideshow" />
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_action_food"
+            android:title="@string/menu_orden" />
+        <item
             android:id="@+id/nav_turno"
             android:icon="@drawable/ic_baseline_select_all_24"
             android:title="@string/menu_turno" />
