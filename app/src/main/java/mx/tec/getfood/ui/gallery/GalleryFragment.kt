@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import kotlinx.android.synthetic.main.fragment_codigo.*
 import kotlinx.android.synthetic.main.fragment_codigo.view.*
 import mx.tec.getfood.LogIn
 import mx.tec.getfood.Menu
@@ -34,7 +35,8 @@ class GalleryFragment : Fragment() {
         })
 
         root.btn_codigo.setOnClickListener {
-            Toast.makeText(getActivity(), "Codigo Registrado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Codigo Registrado", Toast.LENGTH_SHORT).show()
+            edt_codigo.setText("")
         }
         return root
     }
