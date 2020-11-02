@@ -20,7 +20,7 @@ class Registro : AppCompatActivity() {
 
         val b0=findViewById<Button>(R.id.btn_registro)
         b0.setOnClickListener {
-            val nombre = edtUsuario.text.toString()
+            val nombre = edtNombre.text.toString()
             val correo = edtCorreo.text.toString()
             val usuario = edtUsuario.text.toString()
             var contrasena = edtContrasena.text.toString()
@@ -28,7 +28,7 @@ class Registro : AppCompatActivity() {
             addPersona(nombre, correo, usuario, contrasena)
 
             val i = Intent(this@Registro, LogIn::class.java)
-            Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show();
+
             startActivity(i)
 
         }
@@ -48,15 +48,18 @@ class Registro : AppCompatActivity() {
         json.put("nickname", usuario)
         json.put("password", contrasena)
 
-        var resp = false;
         val uri = "http://10.0.2.2/getfood/usuario"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
             Log.e("Mensaje", response.toString())
-            resp=true
+            if(response.getJSONObject("0").getString("1").equals("1"))
+                Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(this, "Intententelo de nuevo", Toast.LENGTH_SHORT).show();
         }
         val error = Response.ErrorListener { error ->
             Log.e("Mensaje", error.message!!)
+            Toast.makeText(this, "Intententelo mas tarde", Toast.LENGTH_SHORT).show();
         }
 
         val request = JsonObjectRequest(Request.Method.POST, uri, json, listener, error)

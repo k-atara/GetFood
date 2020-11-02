@@ -26,8 +26,14 @@
     <string name="NombreDeUsuario">Nombre de usuario</string>
     <string name="Regresar">Regresar</string>
 
+    <!-- Pantalla de Cuenta-->
+    <string name="nombre">Nombre</string>
+    <string name="correoe">Correo</string>
+    <string name="usuario">Usuario</string>
+
     <!-- Pantalla de Menu y Registro-->
-    <string name="menu_home">Menú</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_cuenta">Cuenta</string>
     <string name="menu_orden">Orden</string>
     <string name="menu_gallery">Registrar código</string>
     <string name="menu_slideshow">Escanear código</string>

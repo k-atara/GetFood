@@ -9,20 +9,25 @@
             android:icon="@drawable/ic_baseline_restaurant_menu_24"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_codigo"
-            android:icon="@drawable/ic_baseline_merge_type_24"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_turno"
+            android:icon="@drawable/ic_baseline_select_all_24"
+            android:title="@string/menu_turno" />
+        <item
+            android:id="@+id/nav_orden"
+            android:icon="@drawable/ic_action_food"
+            android:title="@string/menu_orden" />
         <item
             android:id="@+id/nav_codigoqr"
             android:icon="@drawable/ic_baseline_center_focus_weak_24"
             android:title="@string/menu_slideshow" />
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_action_food"
-            android:title="@string/menu_orden" />
+            android:id="@+id/nav_codigo"
+            android:icon="@drawable/ic_baseline_merge_type_24"
+            android:title="@string/menu_gallery" />
+
         <item
-            android:id="@+id/nav_turno"
-            android:icon="@drawable/ic_baseline_select_all_24"
-            android:title="@string/menu_turno" />
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_action_account"
+            android:title="@string/menu_cuenta" />
     </group>
 </menu>

@@ -1,28 +1,24 @@
-package mx.tec.getfood.ui.gallery
+package mx.tec.getfood.ui.codigo
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import kotlinx.android.synthetic.main.activity_registro.*
 import kotlinx.android.synthetic.main.fragment_codigo.*
 import kotlinx.android.synthetic.main.fragment_codigo.view.*
-import mx.tec.getfood.LogIn
-import mx.tec.getfood.Menu
 import mx.tec.getfood.R
 import org.json.JSONObject
+
 
 class GalleryFragment : Fragment() {
 
@@ -37,22 +33,25 @@ class GalleryFragment : Fragment() {
             ViewModelProviders.of(this).get(GalleryViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_codigo, container, false)
         val textView: TextView = root.findViewById(R.id.edt_codigo)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        /*galleryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
-        })
+        })*/
 
         root.btn_codigo.setOnClickListener {
             Toast.makeText(getActivity(), "Codigo Registrado", Toast.LENGTH_SHORT).show()
             val codigo = edt_codigo.text.toString()
-            addCodigo(codigo)
-            edt_codigo.setText("")
+            val sp = getActivity()?.getSharedPreferences("archivo", Context.MODE_PRIVATE)
+            val user = sp?.getString("Usuario", "-1").toString()
 
+            addCodigo(codigo, user)
+            edt_codigo.setText("")
         }
         return root
     }
 
-    fun addCodigo(codigo:String){
+    fun addCodigo(codigo: String, usuario: String){
         var json = JSONObject()
+        json.put("usuario", usuario)
         json.put("codigo", codigo)
 
         var resp = false;

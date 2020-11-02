@@ -10,11 +10,8 @@ import android.widget.EditText
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
-import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import kotlinx.android.synthetic.main.activity_registro.*
-import org.json.JSONArray
 import org.json.JSONObject
 
 class LogIn : AppCompatActivity() {
@@ -22,7 +19,7 @@ class LogIn : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
         val btnIngresar=findViewById<Button>(R.id.btn_ingresar)
-        val edtUsuario = findViewById<EditText>(R.id.edtUsuario)
+        val edtUsuario = findViewById<EditText>(R.id.edtNombre)
         val edtContrasena = findViewById<EditText>(R.id.edtContrasena)
 
         btnIngresar.setOnClickListener {
