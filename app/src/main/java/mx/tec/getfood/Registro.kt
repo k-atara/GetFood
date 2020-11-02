@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -27,6 +28,7 @@ class Registro : AppCompatActivity() {
             addPersona(nombre, correo, usuario, contrasena)
 
             val i = Intent(this@Registro, LogIn::class.java)
+            Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show();
             startActivity(i)
 
         }
@@ -34,7 +36,6 @@ class Registro : AppCompatActivity() {
         val b1=findViewById<Button>(R.id.btm_cancelar)
         b1.setOnClickListener {
             val i = Intent(this@Registro, MainActivity::class.java)
-
             startActivity(i)
         }
 

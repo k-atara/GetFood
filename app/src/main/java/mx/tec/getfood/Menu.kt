@@ -52,7 +52,7 @@ class Menu : AppCompatActivity() {
                 bottomNavigation.visibility = View.VISIBLE
             }
         }
-        //
+        //        passDataCom()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -84,5 +84,14 @@ class Menu : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
+//     fun passDataCom(editTextImput: String) {
+//        val bundle=Bundle()
+//        bundle.putString("message",editTextImput)
+//
+//        val transaction=this.supportFragmentManager.beginTransaction()
+//        val fragmentB= PlatilloFragment()
+//        fragmentB.arguments= bundle
+//       transaction.replace(R.id.frame_layout,fragmentB)
+//        transaction.commit()
+//    }
 }
