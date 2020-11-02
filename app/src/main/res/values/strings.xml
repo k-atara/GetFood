@@ -21,9 +21,9 @@
 
     <!-- Pantalla de Registro-->
     <string name="Registrate">Registrate</string>
-    <string name="NombreCompleto">Nombre Completo</string>
-    <string name="Correo">Correo Electronico</string>
-    <string name="NombreDeUsuario">Nombre De Usuario</string>
+    <string name="NombreCompleto">Nombre completo</string>
+    <string name="Correo">Correo electrónico</string>
+    <string name="NombreDeUsuario">Nombre de usuario</string>
     <string name="Regresar">Regresar</string>
 
     <!-- Pantalla de Menu y Registro-->
