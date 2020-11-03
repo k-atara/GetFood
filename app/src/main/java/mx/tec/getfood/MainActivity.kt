@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         val user = sp.getString("Usuario", "-1").toString()
         val password = sp.getString("Password", "-1").toString()
 
-        Log.e("user", user)
+        //Log.e("user", user)
 
         if(user=="-1" && password=="-1") {
             b0.setOnClickListener {

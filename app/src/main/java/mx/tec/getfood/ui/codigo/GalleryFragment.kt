@@ -38,7 +38,6 @@ class GalleryFragment : Fragment() {
         })*/
 
         root.btn_codigo.setOnClickListener {
-            Toast.makeText(getActivity(), "Codigo Registrado", Toast.LENGTH_SHORT).show()
             val codigo = edt_codigo.text.toString()
             val sp = getActivity()?.getSharedPreferences("archivo", Context.MODE_PRIVATE)
             val user = sp?.getString("Usuario", "-1").toString()
@@ -54,12 +53,14 @@ class GalleryFragment : Fragment() {
         json.put("usuario", usuario)
         json.put("codigo", codigo)
 
-        var resp = false;
         val uri = "http://10.0.2.2/getfood/registroCodigo"
         var queue = Volley.newRequestQueue(getActivity())
         val listener = Response.Listener<JSONObject> { response ->
-            Log.e("Mensaje", response.toString())
-            resp=true
+            //Log.e("Mensaje", response.toString())
+            if(response.getJSONObject("0").getString("1").equals("1"))
+                Toast.makeText(getActivity(), "Codigo Registrado", Toast.LENGTH_SHORT).show()
+            else
+                Toast.makeText(getActivity(), "Inténtalo de más tarde", Toast.LENGTH_SHORT).show()
         }
         val error = Response.ErrorListener { error ->
             Log.e("Mensaje", error.message!!)
