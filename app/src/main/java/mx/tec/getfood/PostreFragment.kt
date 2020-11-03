@@ -17,7 +17,7 @@ import mx.tec.getfood.elemento.model.Elemento
 import org.json.JSONArray
 
 
-class PostreFragment : Fragment() {
+class PostreFragment : Fragment(), CustomAdapter.OnElementoClickListener {
 
     var lista: RecyclerView? = null
 
@@ -58,7 +58,7 @@ class PostreFragment : Fragment() {
             val adaptador = getActivity()?.let {
                 CustomAdapter(
                     it,
-                    R.layout.layout_elemento, postres, R.anim.bounce
+                    R.layout.layout_elemento, postres, R.anim.bounce, this
                 )
             }
             //adaptador.notifyDataSetChanged()
@@ -73,5 +73,9 @@ class PostreFragment : Fragment() {
         }
         val request = JsonArrayRequest(Request.Method.GET, uri, null, listener, error)
         queue.add(request)
+    }
+
+    override fun onItemClick(item: Elemento, position: Int) {
+        Log.e("Mensaje", item.nombre)
     }
 }

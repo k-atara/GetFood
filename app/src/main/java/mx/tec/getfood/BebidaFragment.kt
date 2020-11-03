@@ -17,7 +17,7 @@ import mx.tec.getfood.elemento.model.Elemento
 import org.json.JSONArray
 
 
-class BebidaFragment : Fragment() {
+class BebidaFragment : Fragment(), CustomAdapter.OnElementoClickListener  {
 
     var lista: RecyclerView? = null
 
@@ -57,7 +57,7 @@ class BebidaFragment : Fragment() {
             val adaptador = getActivity()?.let {
                 CustomAdapter(
                     it,
-                    R.layout.layout_elemento, bebidas, R.anim.bounce
+                    R.layout.layout_elemento, bebidas, R.anim.bounce, this
                 )
             }
             //adaptador.notifyDataSetChanged()
@@ -72,5 +72,9 @@ class BebidaFragment : Fragment() {
         }
         val request = JsonArrayRequest(Request.Method.GET, uri, null, listener, error)
         queue.add(request)
+    }
+
+    override fun onItemClick(item: Elemento, position: Int) {
+        Log.e("Mensaje", item.nombre)
     }
 }

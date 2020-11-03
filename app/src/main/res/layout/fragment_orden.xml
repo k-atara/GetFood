@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondodark_s"
-    tools:context=".Pedido">
+    tools:context=".ui.orden.Orden">
 
     <Button
         android:id="@+id/btnOrdenar"
         android:layout_width="260dp"
         android:layout_height="57dp"
         android:layout_gravity="center|center_horizontal"
-        android:layout_marginTop="48dp"
         android:background="@drawable/laouy_creame_shape"
         android:fontFamily="@font/raleway_bold"
         android:text="@string/btnOrdenar"
@@ -20,25 +19,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/lvLista"
         app:layout_constraintStart_toStartOf="@+id/lvLista"
-        app:layout_constraintTop_toBottomOf="@+id/lvLista"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.178" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lvLista"
         android:layout_width="408dp"
         android:layout_height="172dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="250dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/edtEspecificaciones"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lvLista" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="180dp"
         android:fontFamily="@font/raleway_black"
+        android:gravity="center"
         android:text="@string/Ordene_aqui"
         android:textColor="@color/colorPrimaryLight"
         android:textSize="30sp"

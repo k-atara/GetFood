@@ -18,7 +18,7 @@
         tools:srcCompat="@drawable/hamburguesa_con_queso" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/txtNombrePlatillo"
         style="@style/titlesPD"
         android:layout_width="319dp"
         android:layout_height="80dp"
@@ -30,41 +30,41 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/txtDescripcionPlatillo"
         style="@style/sub_titlesA"
         android:layout_width="240dp"
         android:layout_height="104dp"
         android:layout_marginTop="32dp"
         android:text="Hamburguesa con queso, con doble carne y papas"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintStart_toStartOf="@+id/txtNombrePlatillo"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombrePlatillo" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/txtCostoPlatillo"
         style="@style/sub_titlesA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="$75"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="@+id/txtNombrePlatillo"
         app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintStart_toEndOf="@+id/txtDescripcionPlatillo"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombrePlatillo" />
 
     <TextView
-        android:id="@+id/textView11"
-        style="@style/sub_titlesA"
+        android:id="@+id/txtPuntosPlatillo"
+        style="@style/sub_titlesPL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
-        android:text="$75"
+        android:text="20"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="@+id/txtNombrePlatillo"
         app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintStart_toEndOf="@+id/txtDescripcionPlatillo"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombrePlatillo" />
 
     <Button
         android:id="@+id/btnCangearPuntos"
@@ -84,8 +84,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Especificaciónes de Entrega"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="@+id/txtCostoPlatillo"
         app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintStart_toStartOf="@+id/txtDescripcionPlatillo"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescripcionPlatillo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,4 +51,6 @@
 
     <string name="txt_codigo">Ingresar Código</string>
     <string name="edt_codigo">Ingresa código aquí</string>
+
+    <string name="edtEspecificaciones">Especificaciones</string>
 </resources>

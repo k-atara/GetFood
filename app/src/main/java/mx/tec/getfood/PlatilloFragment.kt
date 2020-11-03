@@ -1,11 +1,13 @@
 package mx.tec.getfood
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.android.volley.Request
@@ -16,7 +18,7 @@ import mx.tec.getfood.elemento.adapter.CustomAdapter
 import mx.tec.getfood.elemento.model.Elemento
 import org.json.JSONArray
 
-class PlatilloFragment : Fragment() {
+class PlatilloFragment : Fragment(), CustomAdapter.OnElementoClickListener {
 
     //lateinit var adaptador: CustomAdapter
     var lista: RecyclerView? = null
@@ -55,6 +57,7 @@ class PlatilloFragment : Fragment() {
 
         return v
     }
+
     fun showData(v: View){
         var queue = Volley.newRequestQueue(getActivity())
 
@@ -79,7 +82,7 @@ class PlatilloFragment : Fragment() {
             val adaptador = getActivity()?.let {
                 CustomAdapter(
                     it,
-                    R.layout.layout_elemento, platillos, R.anim.bounce
+                    R.layout.layout_elemento, platillos, R.anim.bounce, this
                 )
             }
             //adaptador.notifyDataSetChanged()
@@ -94,5 +97,10 @@ class PlatilloFragment : Fragment() {
         }
         val request = JsonArrayRequest(Request.Method.GET, uri, null, listener, error)
         queue.add(request)
+    }
+
+    override fun onItemClick(item: Elemento, position: Int) {
+        //Toast.makeText(context, item.nombre, Toast.LENGTH_SHORT).show()
+        Log.e("Mensaje", item.nombre)
     }
 }
