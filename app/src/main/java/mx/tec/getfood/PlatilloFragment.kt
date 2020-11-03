@@ -15,10 +15,11 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 import mx.tec.getfood.elemento.adapter.CustomAdapter
+import mx.tec.getfood.elemento.adapter.RecyclerClickInterface
 import mx.tec.getfood.elemento.model.Elemento
 import org.json.JSONArray
 
-class PlatilloFragment : Fragment(), CustomAdapter.OnElementoClickListener {
+class PlatilloFragment : Fragment(), RecyclerClickInterface {
 
     //lateinit var adaptador: CustomAdapter
     var lista: RecyclerView? = null
@@ -70,11 +71,9 @@ class PlatilloFragment : Fragment(), CustomAdapter.OnElementoClickListener {
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
                 var platillo = Elemento(
-                    id = response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
                     costo = "$"+response.getJSONObject(i).getString("costo"),
-                    puntos = response.getJSONObject(i).getString("puntos"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
                 platillos.add(platillo)
@@ -85,9 +84,9 @@ class PlatilloFragment : Fragment(), CustomAdapter.OnElementoClickListener {
                     R.layout.layout_elemento, platillos, R.anim.bounce, this
                 )
             }
+            //val adaptador = CustomAdapter(requireContext(), R.layout.layout_elemento, platillos, R.anim.bounce,this)
             //adaptador.notifyDataSetChanged()
-            lista?.layoutManager =
-                StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+            lista?.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
             lista?.setHasFixedSize(true)
             lista?.adapter = adaptador
         }
@@ -99,8 +98,11 @@ class PlatilloFragment : Fragment(), CustomAdapter.OnElementoClickListener {
         queue.add(request)
     }
 
-    override fun onItemClick(item: Elemento, position: Int) {
-        //Toast.makeText(context, item.nombre, Toast.LENGTH_SHORT).show()
-        Log.e("Mensaje", item.nombre)
+    override fun onItemClick(position: Int) {
+        Log.e("Mensaje", "Corre")
+    }
+
+    override fun onLongItemClick(position: Int) {
+        Log.e("Mensaje", "Corre")
     }
 }
