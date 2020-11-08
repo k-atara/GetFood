@@ -12,6 +12,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import kotlinx.android.synthetic.main.fragment_home.*
 import mx.tec.getfood.R
 import org.json.JSONObject
 
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
     var txtNombre: TextView? = null
     var txtCorreo: TextView? = null
     var txtUsuario: TextView? = null
+    var txtPuntos: TextView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,15 +48,16 @@ class HomeFragment : Fragment() {
         txtUsuario=v.findViewById(R.id.txtUsuario)
         txtNombre=v.findViewById(R.id.txtNombre)
         txtCorreo=v.findViewById(R.id.txtCorreo)
+        txtPuntos=v.findViewById(R.id.txtPuntos)
         txtUsuario!!.text=user
 
-        var resp = ""
         val uri = "http://10.0.2.2/getfood/cuenta"
         var queue = Volley.newRequestQueue(v.context)
         val listener = Response.Listener<JSONObject> { response ->
             //Log.e("Mensaje", response.toString())
             txtNombre!!.text=response.getJSONObject("0").getString("nombre")
             txtCorreo!!.text=response.getJSONObject("0").getString("correo")
+            txtPuntos!!.text=response.getJSONObject("0").getString("puntos")
         }
         val error = Response.ErrorListener { error ->
             Log.e("Mensaje", error.message!!)

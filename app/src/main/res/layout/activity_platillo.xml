@@ -71,21 +71,10 @@
         style="@style/buttonA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:background="@drawable/btn_primary_accent"
-        android:text="Cangear puntos"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="601dp" />
+        android:text="Añadir a orden"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescripcionPlatillo"
+        tools:layout_editor_absoluteX="80dp" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName6"
-        android:layout_width="279dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Especificaciónes de Entrega"
-        app:layout_constraintEnd_toEndOf="@+id/txtCostoPlatillo"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@+id/txtDescripcionPlatillo"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescripcionPlatillo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
