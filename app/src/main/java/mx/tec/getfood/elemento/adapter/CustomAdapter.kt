@@ -44,7 +44,6 @@ class CustomAdapter(private val context: Context,
         init{
             itemView.setOnClickListener(View.OnClickListener {
                 recyclerClickInterface.onItemClick(adapterPosition)
-                Log.e("Mensaje", "Corre")
             })
             imagen = itemView.findViewById(R.id.imgImagen)
             nombre = itemView.findViewById(R.id.txtNombre)

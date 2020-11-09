@@ -75,7 +75,7 @@ class PostreFragment : Fragment(), RecyclerClickInterface {
     }
 
     override fun onItemClick(position: Int) {
-        Log.e("Mensaje", "")
+        Log.e("Mensaje", "Corre")
     }
 
     override fun onLongItemClick(position: Int) {
