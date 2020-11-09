@@ -67,14 +67,14 @@
         app:layout_constraintTop_toBottomOf="@+id/txtNombrePlatillo" />
 
     <Button
-        android:id="@+id/btnCangearPuntos"
+        android:id="@+id/btnOrdenar"
         style="@style/buttonA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:background="@drawable/btn_primary_accent"
-        android:text="Añadir a orden"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescripcionPlatillo"
-        tools:layout_editor_absoluteX="80dp" />
+        android:text="@string/btnOrdenar"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="538dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
