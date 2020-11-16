@@ -110,7 +110,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_codigoqr"
-        android:name="mx.tec.getfood.ui.slideshow.SlideshowFragment"
+        android:name="mx.tec.getfood.ui.QR.ScannerFragment"
         android:label="Código qr"
         tools:layout="@layout/fragment_codigoqr">
         <action
