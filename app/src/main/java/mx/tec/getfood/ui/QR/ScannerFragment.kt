@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.fragment_codigoqr.view.*
 import me.dm7.barcodescanner.zbar.Result
 import me.dm7.barcodescanner.zbar.ZBarScannerView
 import mx.tec.getfood.R
+import mx.tec.getfood.ui.QR.dialogs.QRCodeResultDialog
 import mx.tec.qrscanner.db.DBHelper
 import mx.tec.qrscanner.db.HelperDB
 import mx.tec.qrscanner.db.database.QrResultDataBase
@@ -126,7 +127,7 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
 
     private fun onQrResults(contents : String?) {
         if (contents.isNullOrEmpty()){
-            Toast.makeText(requireContext(),"Empty Qr Code", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"Empty Qr Code", Toast.LENGTH_SHORT).show()
         }else{
             saveToDataBase(contents)
         }

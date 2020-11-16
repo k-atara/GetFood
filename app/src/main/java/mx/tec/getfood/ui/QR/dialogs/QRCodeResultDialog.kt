@@ -1,4 +1,4 @@
-package mx.tec.getfood.ui.QR
+package mx.tec.getfood.ui.QR.dialogs
 
 import android.app.Dialog
 import android.content.Context
