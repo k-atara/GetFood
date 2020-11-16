@@ -77,6 +77,9 @@
         <action
             android:id="@+id/action_platoFuerte_to_orden"
             app:destination="@id/nav_orden" />
+        <action
+            android:id="@+id/action_platoFuerte_to_confirmar"
+            app:destination="@id/confirmar" />
     </fragment>
     <fragment
         android:id="@+id/bebidas"
@@ -162,4 +165,9 @@
             android:id="@+id/action_orden_to_nav_turno"
             app:destination="@id/nav_turno" />
     </fragment>
+    <activity
+        android:id="@+id/confirmar"
+        android:name="mx.tec.getfood.Confirmar"
+        android:label="activity_confirmar"
+        tools:layout="@layout/activity_confirmar" />
 </navigation>

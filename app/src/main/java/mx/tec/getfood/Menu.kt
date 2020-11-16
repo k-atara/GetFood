@@ -33,7 +33,7 @@ class Menu : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.nav_codigoqr, R.id.nav_turno, R.id.nav_orden
+                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.confirmar, R.id.nav_turno, R.id.nav_orden
             ), drawerLayout
         )
 

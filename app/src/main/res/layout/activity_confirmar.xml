@@ -8,7 +8,7 @@
     tools:context=".Confirmar">
 
     <TextView
-        android:id="@+id/txtConfirmar"
+        android:id="@+id/txtMensaje"
         style="@style/titlesPD"
         android:layout_width="211dp"
         android:layout_height="133dp"
@@ -47,9 +47,9 @@
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/txtConfirmar"
-        app:layout_constraintStart_toStartOf="@+id/txtConfirmar"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirmar"
+        app:layout_constraintEnd_toEndOf="@+id/txtMensaje"
+        app:layout_constraintStart_toStartOf="@+id/txtMensaje"
+        app:layout_constraintTop_toBottomOf="@+id/txtMensaje"
         app:srcCompat="@drawable/grafico" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
