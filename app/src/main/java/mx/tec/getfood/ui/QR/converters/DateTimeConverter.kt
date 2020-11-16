@@ -1,4 +1,4 @@
-package mx.tec.qrscanner.db.converters
+package mx.tec.getfood.ui.QR.converters
 import androidx.room.TypeConverter
 import java.util.*
 class DateTimeConverter {

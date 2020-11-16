@@ -1,11 +1,11 @@
-package mx.tec.qrscanner.db.database
+package mx.tec.getfood.ui.QR.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import mx.tec.getfood.ui.QR.dao.QrResultDao
 import mx.tec.getfood.ui.QR.entities.QrResults
-import mx.tec.qrscanner.db.dao.QrResultDao
 
 
 @Database(entities = [QrResults::class], version = 1,exportSchema = false)

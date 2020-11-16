@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import mx.tec.qrscanner.db.converters.DateTimeConverter
+import mx.tec.getfood.ui.QR.converters.DateTimeConverter
 import java.util.*
 
 @Entity

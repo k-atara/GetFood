@@ -1,7 +1,7 @@
-package mx.tec.qrscanner.db
+package mx.tec.getfood.ui.QR
 
 import mx.tec.getfood.ui.QR.entities.QrResults
-import mx.tec.qrscanner.db.database.QrResultDataBase
+import mx.tec.getfood.ui.QR.database.QrResultDataBase
 import java.util.*
 
 class HelperDB(var qrResultDataBase: QrResultDataBase) :DBHelper {

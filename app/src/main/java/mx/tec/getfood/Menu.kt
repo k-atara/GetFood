@@ -6,14 +6,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.navigation.Navigation
 import androidx.navigation.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -33,7 +30,7 @@ class Menu : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.confirmar, R.id.nav_turno, R.id.nav_orden
+                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.splashActivity, R.id.nav_turno, R.id.nav_orden
             ), drawerLayout
         )
 
@@ -45,7 +42,7 @@ class Menu : AppCompatActivity() {
         bottomNavigation.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if(destination.id == R.id.nav_home || destination.id == R.id.nav_codigoqr || destination.id == R.id.nav_turno || destination.id == R.id.nav_codigo || destination.id == R.id.nav_orden) {
+            if(destination.id == R.id.nav_home || destination.id == R.id.splashActivity || destination.id == R.id.nav_turno || destination.id == R.id.nav_codigo || destination.id == R.id.nav_orden) {
                 bottomNavigation.visibility = View.GONE
             }else {
                 bottomNavigation.visibility = View.VISIBLE

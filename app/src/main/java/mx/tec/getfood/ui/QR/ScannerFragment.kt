@@ -1,19 +1,22 @@
 package mx.tec.getfood.ui.QR
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_codigoqr.view.*
+import kotlinx.android.synthetic.main.fragment_scanner.view.*
 import me.dm7.barcodescanner.zbar.Result
 import me.dm7.barcodescanner.zbar.ZBarScannerView
 import mx.tec.getfood.R
-import mx.tec.qrscanner.db.DBHelper
-import mx.tec.qrscanner.db.HelperDB
-import mx.tec.qrscanner.db.database.QrResultDataBase
+import mx.tec.getfood.ui.QR.DBHelper
+import mx.tec.getfood.ui.QR.HelperDB
+import mx.tec.getfood.ui.QR.database.QrResultDataBase
+import mx.tec.getfood.ui.QR.database.QrResultDataBase.Companion.getAppDatabase
+import mx.tec.getfood.ui.QR.dialogs.QRCodeResultDialog
+import org.w3c.dom.Text
 
 
 class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
@@ -27,23 +30,23 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
 
     private lateinit var mView: View
     lateinit var scannerView: ZBarScannerView
-  lateinit var resultDialog: QRCodeResultDialog
-  private lateinit var dbHelper: DBHelper
+    lateinit var resultDialog: QRCodeResultDialog
+    private lateinit var dbHelper: DBHelper
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val root = inflater.inflate(R.layout.fragment_codigoqr, container, false)
+        // Inflate the layout for this fragment
+        mView =  inflater.inflate(R.layout.fragment_scanner, container, false)
         init()
         initViews()
         OnClick()
         return mView.rootView
     }
+
     private fun init() {
-      dbHelper= HelperDB(QrResultDataBase.getAppDatabase(requireContext())!!)
+        dbHelper=HelperDB(QrResultDataBase.getAppDatabase(requireContext())!!)
     }
 
     private fun OnClick() {
@@ -55,10 +58,12 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
             }
         }
     }
+
     private fun initViews() {
         InitializeQrScanner()
         setResultDialog()
     }
+
     private fun setResultDialog() {
         resultDialog = QRCodeResultDialog(requireContext())
         resultDialog.setOnDismissListener(object : QRCodeResultDialog.OnDismissListener{
@@ -75,7 +80,6 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
         scannerView.stopCameraPreview()
         scannerView.resumeCameraPreview(this)
     }
-
     private fun onFlashLight() {
         mView.flashToggle.isSelected = true
         scannerView.flash = true
@@ -85,11 +89,12 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
         mView.flashToggle.isSelected = false
         scannerView.flash = false
     }
+
     private fun InitializeQrScanner() {
         scannerView = ZBarScannerView(context)
-        scannerView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
-        scannerView.setBorderColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
-        scannerView.setLaserColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
+        scannerView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.colorAlert))
+        scannerView.setBorderColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark))
+        scannerView.setLaserColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark))
         scannerView.setBorderStrokeWidth(10)
         scannerView.setSquareViewFinder(true)
         scannerView.setAutoFocus(true)
@@ -102,8 +107,6 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
     private fun startQRCamera() {
         scannerView.startCamera()
     }
-
-
     override fun onResume() {
         super.onResume()
         scannerView.setResultHandler(this)
@@ -126,7 +129,7 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
 
     private fun onQrResults(contents : String?) {
         if (contents.isNullOrEmpty()){
-            Toast.makeText(requireContext(),"Empty Qr Code", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"Empty Qr Code",Toast.LENGTH_SHORT).show()
         }else{
             saveToDataBase(contents)
         }
@@ -137,4 +140,5 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
         val qrResult = dbHelper.getQRResult(insertedResultId)
         resultDialog.show(qrResult)
     }
-  }
+
+}

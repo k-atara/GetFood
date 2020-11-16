@@ -1,4 +1,4 @@
-package mx.tec.qrscanner.db.dao
+package mx.tec.getfood.ui.QR.dao
 
 import androidx.room.Dao
 import androidx.room.Insert

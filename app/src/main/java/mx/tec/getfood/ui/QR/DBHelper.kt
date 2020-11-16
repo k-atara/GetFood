@@ -1,4 +1,4 @@
-package mx.tec.qrscanner.db
+package mx.tec.getfood.ui.QR
 
 import mx.tec.getfood.ui.QR.entities.QrResults
 

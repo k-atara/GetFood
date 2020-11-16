@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/main"
     app:startDestination="@id/platoFuerte">
 
     <fragment
@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_nav_home_to_platoFuerte"
             app:destination="@id/platoFuerte" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_codigoqr"
-            app:destination="@id/nav_codigoqr" />
         <action
             android:id="@+id/action_nav_home_to_nav_turno"
             app:destination="@id/nav_turno" />
@@ -35,9 +32,6 @@
         <action
             android:id="@+id/action_nav_turno_to_platoFuerte"
             app:destination="@id/platoFuerte" />
-        <action
-            android:id="@+id/action_nav_turno_to_nav_codigoqr"
-            app:destination="@id/nav_codigoqr" />
         <action
             android:id="@+id/action_nav_turno_to_nav_home"
             app:destination="@id/nav_home" />
@@ -69,17 +63,14 @@
             android:id="@+id/action_platoFuerte_to_nav_turno"
             app:destination="@id/nav_turno" />
         <action
-            android:id="@+id/action_platoFuerte_to_nav_codigoqr"
-            app:destination="@id/nav_codigoqr" />
-        <action
             android:id="@+id/action_platoFuerte_to_galleryFragment"
             app:destination="@id/nav_codigo" />
         <action
             android:id="@+id/action_platoFuerte_to_orden"
             app:destination="@id/nav_orden" />
         <action
-            android:id="@+id/action_platoFuerte_to_confirmar"
-            app:destination="@id/confirmar" />
+            android:id="@+id/action_platoFuerte_to_splashActivity2"
+            app:destination="@id/splashActivity" />
     </fragment>
     <fragment
         android:id="@+id/bebidas"
@@ -109,24 +100,6 @@
             app:destination="@id/platoFuerte" />
     </fragment>
     <fragment
-        android:id="@+id/nav_codigoqr"
-        android:name="mx.tec.getfood.ui.QR.ScannerFragment"
-        android:label="Código qr"
-        tools:layout="@layout/fragment_codigoqr">
-        <action
-            android:id="@+id/action_nav_codigoqr_to_platoFuerte"
-            app:destination="@id/platoFuerte" />
-        <action
-            android:id="@+id/action_nav_codigoqr_to_nav_turno"
-            app:destination="@id/nav_turno" />
-        <action
-            android:id="@+id/action_nav_codigoqr_to_galleryFragment"
-            app:destination="@id/nav_codigo" />
-        <action
-            android:id="@+id/action_nav_codigoqr_to_orden"
-            app:destination="@id/nav_orden" />
-    </fragment>
-    <fragment
         android:id="@+id/nav_codigo"
         android:name="mx.tec.getfood.ui.codigo.GalleryFragment"
         android:label="Código"
@@ -134,9 +107,6 @@
         <action
             android:id="@+id/action_galleryFragment_to_nav_home"
             app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_galleryFragment_to_nav_codigoqr"
-            app:destination="@id/nav_codigoqr" />
         <action
             android:id="@+id/action_galleryFragment_to_nav_turno"
             app:destination="@id/nav_turno" />
@@ -159,15 +129,12 @@
             android:id="@+id/action_orden_to_nav_codigo"
             app:destination="@id/nav_codigo" />
         <action
-            android:id="@+id/action_orden_to_nav_codigoqr"
-            app:destination="@id/nav_codigoqr" />
-        <action
             android:id="@+id/action_orden_to_nav_turno"
             app:destination="@id/nav_turno" />
     </fragment>
     <activity
-        android:id="@+id/confirmar"
-        android:name="mx.tec.getfood.Confirmar"
-        android:label="activity_confirmar"
-        tools:layout="@layout/activity_confirmar" />
+        android:id="@+id/splashActivity"
+        android:name="mx.tec.getfood.ui.QR.Activity.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
 </navigation>
