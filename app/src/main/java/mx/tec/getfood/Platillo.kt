@@ -17,10 +17,6 @@ import org.json.JSONObject
 
 class Platillo : AppCompatActivity() {
 
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_platillo)

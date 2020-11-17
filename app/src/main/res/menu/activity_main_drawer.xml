@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_action_food"
             android:title="@string/menu_orden" />
         <item
-            android:id="@+id/nav_codigoqr"
+            android:id="@+id/splashActivity"
             android:icon="@drawable/ic_baseline_center_focus_weak_24"
             android:title="@string/menu_slideshow" />
         <item
