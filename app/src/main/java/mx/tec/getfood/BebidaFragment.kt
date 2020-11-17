@@ -41,7 +41,6 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
 
         lista = v.findViewById(R.id.lvLista)
 
-
         val uri = "http://10.0.2.2/getfood/bebida"
 
         val listener = Response.Listener<JSONArray> { response ->
@@ -81,7 +80,7 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
         Log.e("Mensaje", "Corre")
         val i = Intent(context, Platillo::class.java)
         i.putExtra("id",bebidas[position].id.toString())
-        i . putExtra ("nombre", bebidas[position].nombre)
+        i.putExtra ("nombre", bebidas[position].nombre)
         i.putExtra("descripcion",bebidas[position].descripcion )
         i.putExtra("costo",bebidas[position].costo )
         i.putExtra("puntos",bebidas[position].puntos)

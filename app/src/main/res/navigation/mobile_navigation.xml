@@ -62,6 +62,9 @@
         <action
             android:id="@+id/action_platoFuerte_to_orden3"
             app:destination="@id/orden" />
+        <action
+            android:id="@+id/splashActivity"
+            app:destination="@id/splashActivity" />
     </fragment>
     <fragment
         android:id="@+id/bebidas"
@@ -91,21 +94,6 @@
             app:destination="@id/platoFuerte" />
     </fragment>
     <fragment
-        android:id="@+id/nav_codigoqr"
-        android:name="mx.tec.getfood.ui.slideshow.SlideshowFragment"
-        android:label="Código qr"
-        tools:layout="@layout/fragment_codigoqr">
-        <action
-            android:id="@+id/action_nav_codigoqr_to_platoFuerte"
-            app:destination="@id/platoFuerte" />
-        <action
-            android:id="@+id/action_nav_codigoqr_to_nav_turno"
-            app:destination="@id/nav_turno" />
-        <action
-            android:id="@+id/action_nav_codigoqr_to_galleryFragment"
-            app:destination="@id/nav_codigo" />
-    </fragment>
-    <fragment
         android:id="@+id/nav_codigo"
         android:name="mx.tec.getfood.ui.codigo.GalleryFragment"
         android:label="Código"
@@ -122,4 +110,9 @@
         android:name="mx.tec.getfood.ui.orden.Orden"
         android:label="activity_orden"
         tools:layout="@layout/activity_orden" />
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="mx.tec.getfood.ui.QR.Activity.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
 </navigation>

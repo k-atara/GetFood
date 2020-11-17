@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.orden.Orden"></activity>
+        <activity android:name=".ui.orden.Orden"/>
         <activity android:name=".Platillo" />
         <activity android:name=".Registro" />
         <activity
@@ -30,9 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Confirmar" />
-        <activity android:name=".LogIn" />
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
