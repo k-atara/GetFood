@@ -12,7 +12,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".ui.QR.Activity.SplashActivity"/>
+        <activity android:name=".ui.QR.Activity.MainQR" />
         <activity android:name=".ui.orden.Orden"/>
         <activity android:name=".Platillo" />
         <activity android:name=".Registro" />
