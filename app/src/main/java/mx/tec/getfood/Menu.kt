@@ -16,8 +16,11 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
 import androidx.navigation.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import mx.tec.getfood.elemento.model.Elemento
 
 class Menu : AppCompatActivity() {
+
+    val carrito = ArrayList<Elemento>()
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -27,13 +30,17 @@ class Menu : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+
+
+
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.nav_codigoqr, R.id.nav_turno, R.id.nav_orden
+                R.id.platoFuerte, R.id.bebidas, R.id.postres, R.id.nav_home, R.id.nav_codigo, R.id.nav_codigoqr, R.id.nav_turno, R.id.orden
             ), drawerLayout
         )
 
@@ -45,7 +52,7 @@ class Menu : AppCompatActivity() {
         bottomNavigation.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if(destination.id == R.id.nav_home || destination.id == R.id.nav_codigoqr || destination.id == R.id.nav_turno || destination.id == R.id.nav_codigo || destination.id == R.id.nav_orden) {
+            if(destination.id == R.id.nav_home || destination.id == R.id.nav_codigoqr || destination.id == R.id.nav_turno || destination.id == R.id.nav_codigo || destination.id == R.id.orden) {
                 bottomNavigation.visibility = View.GONE
             }else {
                 bottomNavigation.visibility = View.VISIBLE
