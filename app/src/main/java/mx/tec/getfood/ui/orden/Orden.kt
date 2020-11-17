@@ -55,7 +55,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
 
 
         btnOrdenar.setOnClickListener {
-
+         
 
             ids!!.forEach{
                 id->
@@ -75,7 +75,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
     }
 
     fun guardarIds(id:String){
-        
+
 
     }
 fun cargarPlatillos(id:String){
