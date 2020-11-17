@@ -1,5 +1,6 @@
 package mx.tec.getfood
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -22,6 +23,7 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
 
     var lista: RecyclerView? = null
 
+    var bebidas = ArrayList<Elemento>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,7 +40,7 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
         var queue = Volley.newRequestQueue(getActivity())
 
         lista = v.findViewById(R.id.lvLista)
-        var bebidas = ArrayList<Elemento>()
+
 
         val uri = "http://10.0.2.2/getfood/bebida"
 
@@ -46,8 +48,10 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
                 var bebida = Elemento(
+                    id=response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
+                    puntos = response.getJSONObject(i).getString("puntos"),
                     costo = "$"+response.getJSONObject(i).getString("costo"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
@@ -75,6 +79,15 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
 
     override fun onItemClick(position: Int) {
         Log.e("Mensaje", "Corre")
+        val i = Intent(context, Platillo::class.java)
+        i.putExtra("id",bebidas[position].id.toString())
+        i . putExtra ("nombre", bebidas[position].nombre)
+        i.putExtra("descripcion",bebidas[position].descripcion )
+        i.putExtra("costo",bebidas[position].costo )
+        i.putExtra("puntos",bebidas[position].puntos)
+        i.putExtra("imagen",bebidas[position].imagen )
+        startActivity(i)
+
     }
 
     override fun onLongItemClick(position: Int) {

@@ -13,7 +13,7 @@
             android:icon="@drawable/ic_baseline_select_all_24"
             android:title="@string/menu_turno" />
         <item
-            android:id="@+id/nav_orden"
+            android:id="@+id/orden"
             android:icon="@drawable/ic_action_food"
             android:title="@string/menu_orden" />
         <item
