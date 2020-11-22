@@ -1,5 +1,6 @@
 package mx.tec.getfood
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -21,6 +22,7 @@ import org.json.JSONArray
 class PostreFragment : Fragment(), RecyclerClickInterface {
 
     var lista: RecyclerView? = null
+    var postres = ArrayList<Elemento>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +41,7 @@ class PostreFragment : Fragment(), RecyclerClickInterface {
         var queue = Volley.newRequestQueue(getActivity())
 
         lista = v.findViewById(R.id.lvLista)
-        var postres = ArrayList<Elemento>()
+
 
         val uri = "http://10.0.2.2/getfood/postre"
 
@@ -47,8 +49,10 @@ class PostreFragment : Fragment(), RecyclerClickInterface {
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
                 var postre = Elemento(
+                    id=response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
+                    puntos = response.getJSONObject(i).getString("puntos"),
                     costo = "$"+response.getJSONObject(i).getString("costo"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
@@ -76,6 +80,14 @@ class PostreFragment : Fragment(), RecyclerClickInterface {
 
     override fun onItemClick(position: Int) {
         Log.e("Mensaje", "Corre")
+
+        val i= Intent(context, Platillo::class.java )
+        i.putExtra("id",postres[position].id.toString())
+        i.putExtra("nombre",postres[position].nombre )
+        i.putExtra("descripcion",postres[position].descripcion )
+        i.putExtra("costo",postres[position].costo )
+        i.putExtra("imagen",postres[position].imagen )
+        startActivity(i)
     }
 
     override fun onLongItemClick(position: Int) {

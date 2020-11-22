@@ -23,6 +23,7 @@ class PlatilloFragment : Fragment(), RecyclerClickInterface {
 
     //lateinit var adaptador: CustomAdapter
     var lista: RecyclerView? = null
+    var platillos = ArrayList<Elemento>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,27 +34,6 @@ class PlatilloFragment : Fragment(), RecyclerClickInterface {
 
         val v = inflater.inflate(R.layout.fragment_platillo, container, false)
 
-        /*val lista: RecyclerView = v.findViewById(R.id.lvLista)
-
-        val datos = listOf(
-            Elemento(1, "Hamburguesa", "Se puede vegana", "$31","20",  R.drawable.hamburguesa),
-            Elemento(2, "Ensalada", "Solo ensalada", "$24","20",  R.drawable.ensalada),
-            Elemento(3, "Burrito", "Al pastor o con suadero", "$25","20",  R.drawable.burrito),
-            Elemento(3, "Sandwich", "de jamon o con salchicas", "$24","20",  R.drawable.sandwich),
-            Elemento(4, "Pizza", "Peperoni o Champiñon", "$25","20",  R.drawable.pizza)
-        )
-
-        val adaptador = getActivity()?.let {
-            CustomAdapter(
-                it,
-                R.layout.layout_elemento, datos, R.anim.bounce
-            )
-        }
-
-        lista.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-        lista.setHasFixedSize(true)
-        lista.adapter=adaptador**/
-
         showData(v)
 
         return v
@@ -63,7 +43,7 @@ class PlatilloFragment : Fragment(), RecyclerClickInterface {
         var queue = Volley.newRequestQueue(getActivity())
 
         lista = v.findViewById(R.id.lvLista)
-        var platillos = ArrayList<Elemento>()
+
 
         val uri = "http://10.0.2.2/getfood/platofuerte"
 
@@ -71,9 +51,11 @@ class PlatilloFragment : Fragment(), RecyclerClickInterface {
             //Log.e("Mensaje", response.toString())
             for (i in 0 until response.length()) {
                 var platillo = Elemento(
+                    id=response.getJSONObject(i).getInt("idPlatillo"),
                     nombre = response.getJSONObject(i).getString("nombre"),
                     descripcion = response.getJSONObject(i).getString("descripcion"),
                     costo = "$"+response.getJSONObject(i).getString("costo"),
+                    puntos = response.getJSONObject(i).getString("puntos"),
                     imagen = response.getJSONObject(i).getString("imagen")
                 )
                 platillos.add(platillo)
@@ -100,9 +82,23 @@ class PlatilloFragment : Fragment(), RecyclerClickInterface {
 
     override fun onItemClick(position: Int) {
         Log.e("Mensaje", "Corre")
+        Log.e("Platillos", platillos[position].toString() )
+
+        Log.e("ID",platillos[position].id.toString())
+        val i = Intent(context, Platillo::class.java)
+        i.putExtra("id",platillos[position].id.toString())
+        i.putExtra ("nombre", platillos[position].nombre)
+        i.putExtra("descripcion",platillos[position].descripcion )
+        i.putExtra("costo",platillos[position].costo )
+        i.putExtra("puntos",platillos[position].puntos)
+        i.putExtra("imagen",platillos[position].imagen )
+        startActivity(i)
+
     }
 
     override fun onLongItemClick(position: Int) {
         Log.e("Mensaje", "Corre")
+
+
     }
 }
