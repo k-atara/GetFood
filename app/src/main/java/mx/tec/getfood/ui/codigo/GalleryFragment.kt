@@ -1,6 +1,7 @@
 package mx.tec.getfood.ui.codigo
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,21 +17,19 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.fragment_codigo.*
 import kotlinx.android.synthetic.main.fragment_codigo.view.*
+import mx.tec.getfood.Confirmar
+import mx.tec.getfood.Menu
 import mx.tec.getfood.R
 import org.json.JSONObject
 
 
 class GalleryFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProviders.of(this).get(GalleryViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_codigo, container, false)
         val textView: TextView = root.findViewById(R.id.edt_codigo)
         /*galleryViewModel.text.observe(viewLifecycleOwner, Observer {
@@ -53,14 +52,22 @@ class GalleryFragment : Fragment() {
         json.put("usuario", usuario)
         json.put("codigo", codigo)
 
-        val uri = "http://10.0.2.2/getfood/registroCodigo"
+        val uri = "http://192.168.1.102/getfood/registroCodigo"
         var queue = Volley.newRequestQueue(getActivity())
         val listener = Response.Listener<JSONObject> { response ->
-            //Log.e("Mensaje", response.toString())
-            if(response.getJSONObject("0").getString("1").equals("1"))
-                Toast.makeText(getActivity(), "Codigo Registrado", Toast.LENGTH_SHORT).show()
-            else
-                Toast.makeText(getActivity(), "Inténtalo de más tarde", Toast.LENGTH_SHORT).show()
+            Log.e("Mensaje", response.toString())
+            if(response.getJSONObject("0").getString("resul").equals("0")) {
+                //Toast.makeText(getActivity(), "Inténtalo de más tarde", Toast.LENGTH_SHORT).show()
+                val i = Intent(getActivity(), Confirmar::class.java)
+                i.putExtra("mensaje", "Inténtalo de más tarde")
+                startActivity(i)
+            }
+            if(response.getJSONObject("0").getString("resul").equals("1")){
+                val i = Intent(getActivity(), Confirmar::class.java)
+                i.putExtra("mensaje", "Código registrado con éxito")
+                startActivity(i)
+            }
+
         }
         val error = Response.ErrorListener { error ->
             Log.e("Mensaje", error.message!!)

@@ -48,7 +48,7 @@ class Registro : AppCompatActivity() {
         json.put("nickname", usuario)
         json.put("password", contrasena)
 
-        val uri = "http://10.0.2.2/getfood/usuario"
+        val uri = "http://192.168.1.102/getfood/usuario"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
             Log.e("Mensaje", response.toString())
