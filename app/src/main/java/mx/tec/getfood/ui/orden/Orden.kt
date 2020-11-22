@@ -83,7 +83,7 @@ fun cargarPlatillos(id:String){
     var queue = Volley.newRequestQueue(this)
 
 
-    val uri = "http://10.0.2.2/getfood/platillo/${id}"
+    val uri = "http://192.168.1.102/getfood/platillo/${id}"
 
     val listener = Response.Listener<JSONArray> { response ->
         //Log.e("Mensaje", response.toString())

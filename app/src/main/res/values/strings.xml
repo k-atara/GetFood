@@ -54,4 +54,5 @@
     <string name="edt_codigo">Ingresa código aquí</string>
 
     <string name="edtEspecificaciones">Especificaciones</string>
+    <string name="camara">Iniciando Cámara</string>
 </resources>
