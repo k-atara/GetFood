@@ -49,7 +49,7 @@ class LogIn : AppCompatActivity() {
         json.put("contra", contra)
 
         var resp = ""
-        val uri = "http://10.0.2.2/getfood/login"
+        val uri = "http://192.168.1.102/getfood/login"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
             Log.e("Mensaje", response.toString())

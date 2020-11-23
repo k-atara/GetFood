@@ -52,7 +52,7 @@ class GalleryFragment : Fragment() {
         json.put("usuario", usuario)
         json.put("codigo", codigo)
 
-        val uri = "http://10.0.2.2/getfood/registroCodigo"
+        val uri = "http://192.168.1.102/getfood/registroCodigo"
         var queue = Volley.newRequestQueue(getActivity())
         val listener = Response.Listener<JSONObject> { response ->
             Log.e("Mensaje", response.toString())

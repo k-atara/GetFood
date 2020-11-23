@@ -41,7 +41,7 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
 
         lista = v.findViewById(R.id.lvLista)
 
-        val uri = "http://10.0.2.2/getfood/bebida"
+        val uri = "http://192.168.1.102/getfood/bebida"
 
         val listener = Response.Listener<JSONArray> { response ->
             //Log.e("Mensaje", response.toString())
