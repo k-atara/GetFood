@@ -3,7 +3,8 @@ package mx.tec.getfood.ui.QR.Activity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import mx.tec.getfood.ui.QR.ScannerFragment
+import mx.tec.getfood.ui.QR.fragments.Historial
+import mx.tec.getfood.ui.QR.fragments.ScannerFragment
 
 
 class MainPageAdapter(var fm: FragmentManager): FragmentStatePagerAdapter(fm) {
@@ -18,9 +19,9 @@ class MainPageAdapter(var fm: FragmentManager): FragmentStatePagerAdapter(fm) {
             }
 
 
-//            2 -> {
-//                Historial.newInstance()
-//            }
+            1 -> {
+                Historial.newInstance()
+            }
 
             else -> {
                 ScannerFragment()

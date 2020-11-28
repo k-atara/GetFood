@@ -22,6 +22,9 @@ class MainQR : AppCompatActivity() {
                     0 -> {
                         bottomNavigationView.selectedItemId = R.id.qrScanMenuId
                     }
+                    1 -> {
+                        bottomNavigationView.selectedItemId = R.id.scannedResultMenuId
+                    }
 
 //                    2 -> {
 //                        bottomNavigationView.selectedItemId = R.id.favouriteScannedMenuId
@@ -36,16 +39,22 @@ class MainQR : AppCompatActivity() {
                 R.id.qrScanMenuId -> {
                     viewPager.currentItem = 0
                 }
+                R.id.scannedResultMenuId -> {
+                    viewPager.currentItem = 1
+
+                }
 
 //                R.id.favouriteScannedMenuId -> {
 //                    viewPager.currentItem = 2
 //                }
             }
             return@setOnNavigationItemSelectedListener true
-        }    }
+        }
+    }
 
     private fun setViewPagerListener() {
         viewPager.adapter = MainPageAdapter(supportFragmentManager)
-        viewPager.offscreenPageLimit = 2    }
+        viewPager.offscreenPageLimit = 2
+    }
 
 }

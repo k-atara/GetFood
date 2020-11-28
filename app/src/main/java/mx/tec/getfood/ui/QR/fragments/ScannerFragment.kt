@@ -1,4 +1,4 @@
-package mx.tec.getfood.ui.QR
+package mx.tec.getfood.ui.QR.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,15 +14,13 @@ import mx.tec.getfood.R
 import mx.tec.getfood.ui.QR.DBHelper
 import mx.tec.getfood.ui.QR.HelperDB
 import mx.tec.getfood.ui.QR.database.QrResultDataBase
-import mx.tec.getfood.ui.QR.database.QrResultDataBase.Companion.getAppDatabase
 import mx.tec.getfood.ui.QR.dialogs.QRCodeResultDialog
-import org.w3c.dom.Text
 
 
 class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
 
     companion object{
-        fun newInstance():ScannerFragment{
+        fun newInstance(): ScannerFragment {
             return ScannerFragment()
 
         }
