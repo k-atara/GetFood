@@ -18,9 +18,9 @@ class MainPageAdapter(var fm: FragmentManager): FragmentStatePagerAdapter(fm) {
                 ScannerFragment.newInstance()
             }
 
-
-            1 -> {
-                Historial.newInstance()
+            1->{
+//                Historial.newInstance()
+                Historial.newInstance(Historial.ResultListType.ALL_RESULTS)
             }
 
             else -> {

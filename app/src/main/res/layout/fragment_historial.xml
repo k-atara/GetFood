@@ -31,5 +31,15 @@
 
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/noResultFound"
+        android:layout_width="348dp"
+        android:layout_height="311dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:src="@drawable/no"
+        app:layout_constraintBottom_toBottomOf="@+id/swipeRefresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/swipeRefresh" />
 </androidx.constraintlayout.widget.ConstraintLayout>

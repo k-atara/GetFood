@@ -5,6 +5,7 @@ import android.content.Context
 import kotlinx.android.synthetic.main.layout_resultado.*
 import mx.tec.getfood.R
 import mx.tec.getfood.ui.QR.entities.QrResults
+import mx.tec.getfood.ui.QR.utils.toFormattedDisplay
 
 class QRCodeResultDialog(var context: Context) {
     private lateinit var  dialog: Dialog
@@ -30,7 +31,7 @@ class QRCodeResultDialog(var context: Context) {
 
     fun show(recentQrResult: QrResults) {
         this.qrResults = recentQrResult
-       // dialog.scannedDate.text = qrResults?.calendar?.toFormattedDisplay()
+       dialog.scannedDate.text = qrResults?.calendar?.toFormattedDisplay()
         dialog.scannedText.text = qrResults!!.result
         dialog.show()
     }
