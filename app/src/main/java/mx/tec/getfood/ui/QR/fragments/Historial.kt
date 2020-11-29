@@ -1,5 +1,6 @@
 package mx.tec.getfood.ui.QR.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -52,7 +53,34 @@ class Historial : Fragment() {
         init()
         showListOfResults()
         setSwipeRefreshLayout()
+        onClicks()
         return mView
+    }
+
+    private fun onClicks() {
+        mView.removeAll.setOnClickListener{
+            showRemoveAllScanedDialog()
+        }
+    }
+
+    private fun showRemoveAllScanedDialog() {
+        AlertDialog.Builder(requireContext(),R.style.CustomAlertDialog)
+            .setTitle("Borrar Todos los elementos")
+            .setMessage("¿Desea borrar todos los elemento?")
+            .setPositiveButton("Borrar") { dialog, which ->
+                clearAllRecords()
+            }
+            .setNegativeButton("Cancelar"){dialog, which ->
+                dialog.cancel()
+            }.show()
+    }
+
+    private fun clearAllRecords() {
+        when(resultType){
+            ResultListType.ALL_RESULTS-> dbHelper.deleteAllQRScannedResult()
+        }
+        mView.scannedHistoryRecyclerView?.adapter?.notifyDataSetChanged()
+        showAllResults()
     }
 
     private fun setSwipeRefreshLayout() {
@@ -99,11 +127,20 @@ class Historial : Fragment() {
         mView.scannedHistoryRecyclerView.layoutManager= LinearLayoutManager(requireContext())
         mView.scannedHistoryRecyclerView.adapter=
             ScannedResultListAdapter(dbHelper,requireContext(),listQrResults.toMutableList())
+        showRecyclerView()
+    }
+
+    private fun showRecyclerView() {
+        mView.layoutHeader.removeAll.visible()
+        mView.scannedHistoryRecyclerView.visible()
+        mView.noResultFound.gone()
     }
 
     private fun showEmptyScreen() {
+        mView.layoutHeader.removeAll.gone()
         mView.scannedHistoryRecyclerView.gone()
         mView.noResultFound.visible()
+
     }
 
 }

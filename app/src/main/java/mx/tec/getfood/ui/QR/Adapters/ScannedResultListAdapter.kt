@@ -1,6 +1,8 @@
 package mx.tec.getfood.ui.QR.Adapters
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,13 +23,35 @@ class ScannedResultListAdapter( var dbHelperI: DBHelper,
         fun bind(qrResult: QrResults, position: Int) {
             view.result.text=qrResult.result
             view.tvTime.text=qrResult.calendar.toFormattedDisplay()
-            onClicks(qrResult)
+            onClicks(qrResult,position)
         }
 
-        private fun onClicks(qrResult: QrResults) {
+        private fun onClicks(qrResult: QrResults,position: Int) {
             view.setOnClickListener{
                 resultDialog.show(qrResult)
             }
+            view.setOnLongClickListener {
+                showDeleteDialog(qrResult,position)
+                return@setOnLongClickListener true
+            }
+        }
+
+        private fun showDeleteDialog(qrResult: QrResults, position: Int) {
+            AlertDialog.Builder(context!!,R.style.CustomAlertDialog)
+                .setTitle("Borrar elemento")
+                .setMessage("¿Desea borrar ese elemento?")
+                .setPositiveButton("Borrar") { dialog, which ->
+                    deleteThisResult(qrResult,position)
+                }
+                .setNegativeButton("Cancelar"){dialog, which ->
+                    dialog.cancel()
+                }.show()
+        }
+
+        private fun deleteThisResult(qrResult: QrResults, position: Int) {
+            dbHelperI.deleteQrResult(qrResult.id!!)
+            listOfScannedResult.removeAt(position)
+            notifyItemRemoved(position)
         }
 
     }

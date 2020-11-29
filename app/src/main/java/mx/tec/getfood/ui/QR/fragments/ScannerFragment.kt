@@ -91,8 +91,8 @@ class ScannerFragment : Fragment(), ZBarScannerView.ResultHandler {
     private fun InitializeQrScanner() {
         scannerView = ZBarScannerView(context)
         scannerView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.colorAlert))
-        scannerView.setBorderColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark))
-        scannerView.setLaserColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark))
+        scannerView.setBorderColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
+        scannerView.setLaserColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
         scannerView.setBorderStrokeWidth(10)
         scannerView.setSquareViewFinder(true)
         scannerView.setAutoFocus(true)
