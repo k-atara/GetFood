@@ -56,4 +56,7 @@
     <string name="edtEspecificaciones">Especificaciones</string>
     <string name="camara">Iniciando Cámara</string>
     <string name="btnTurno">Generar turno</string>
+    <string name="historial"> Historial</string>
+    <string name="Resultados"> Historial</string>
+
 </resources>
