@@ -56,7 +56,7 @@ class GalleryFragment : Fragment() {
 
         //Log.e("Mensaje de prueba", user + codigo)
 
-        val uri = "http://192.168.0.3/getfood/registroCodigo"
+        val uri = "http://192.168.1.102/getfood/registroCodigo"
         var queue = Volley.newRequestQueue(getActivity())
         val listener = Response.Listener<JSONObject> { response ->
             //Log.e("Mensaje", response.toString())

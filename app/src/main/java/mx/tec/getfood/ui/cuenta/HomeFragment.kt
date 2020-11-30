@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
         txtPuntos=v.findViewById(R.id.txtPuntos)
         txtUsuario!!.text=user
 
-        val uri = "http://192.168.0.3/getfood/cuenta"
+        val uri = "http://192.168.1.102/getfood/cuenta"
         var queue = Volley.newRequestQueue(v.context)
         val listener = Response.Listener<JSONObject> { response ->
             //Log.e("Mensaje", response.toString())

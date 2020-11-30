@@ -51,7 +51,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
         //JALAR DATOOS DEL USUARIO   CON ESTE BLOQUE DE CODIGO SE HACE LA LLAMADA AL SERVICIO
         var json = JSONObject()
         json.put("usuario", user)
-        val uri = "http://192.168.0.3/getfood/cuenta"
+        val uri = "http://192.168.1.102/getfood/cuenta"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
             //Log.e("Mensaje", response.toString())
@@ -105,7 +105,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
                         var json = JSONObject()
                         json.put("idPersona", idPersona)
                         json.put("puntos",puntos)
-                        val uri = "http://192.168.0.3/getfood/restarPuntos"
+                        val uri = "http://192.168.1.102/getfood/restarPuntos"
                         var queue = Volley.newRequestQueue(this)
                         val listener = Response.Listener<JSONObject> { response ->
                             //Log.e("MENSAJE COOL", "SI RESTE LOS PUNTOS")
@@ -120,7 +120,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
                         //Log.e("IDPERSONA", idPersona.toString())
                         //GENERARTURNO
 
-                        val uri2 = "http://192.168.0.3/getfood/generarTurno"
+                        val uri2 = "http://192.168.1.102/getfood/generarTurno"
 
                         var pedido = JSONObject()
                         var idsP :String = ""
@@ -174,7 +174,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
                     var queue = Volley.newRequestQueue(this)
 
 
-                    val uri = "http://192.168.0.3/getfood/generarTurno"
+                    val uri = "http://192.168.1.102/getfood/generarTurno"
 
                     var pedido = JSONObject()
                     var idsP :String = ""
@@ -239,7 +239,7 @@ fun cargarPlatillos(id:String, elementoFinal: Boolean = false){
     var queue = Volley.newRequestQueue(this)
 
 
-    val uri = "http://192.168.0.3/getfood/platillo/${id}"
+    val uri = "http://192.168.1.102/getfood/platillo/${id}"
 
     val listener = Response.Listener<JSONArray> { response ->
         //Log.e("Mensaje", response.toString())
