@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="224dp"
         android:fontFamily="@font/raleway_black"
-        android:text="TextView"
+        android:text="Vacío"
         android:textColor="@color/colorPrimaryLight"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
