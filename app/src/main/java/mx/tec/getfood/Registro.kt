@@ -54,7 +54,7 @@ class   Registro : AppCompatActivity() {
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
             Log.e("Mensaje", response.toString())
-            if(response.getJSONObject("0").getString("id").toInt()>0)
+            if(response.getJSONObject("0").getString("1") == "1")
 
 
                 Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show();
