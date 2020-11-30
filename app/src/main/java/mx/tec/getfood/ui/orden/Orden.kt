@@ -69,7 +69,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
 
         //FIN
         ids!!.forEachIndexed{index, id->
-            Log.e("Ids:",id)
+            //Log.e("Ids:",id)
 
             if (index == ids.size-1){
                 cargarPlatillos(id, true)
@@ -108,7 +108,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
                         val uri = "http://192.168.0.3/getfood/restarPuntos"
                         var queue = Volley.newRequestQueue(this)
                         val listener = Response.Listener<JSONObject> { response ->
-                            Log.e("MENSAJE COOL", "SI RESTE LOS PUNTOS")
+                            //Log.e("MENSAJE COOL", "SI RESTE LOS PUNTOS")
                         }
                         val error = Response.ErrorListener { error ->
                             Log.e("Mensaje", error.message!!)
@@ -117,7 +117,7 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
                         val request = JsonObjectRequest(Request.Method.PUT, uri, json, listener, error)
                         queue.add(request)
 
-                        Log.e("IDPERSONA", idPersona.toString())
+                        //Log.e("IDPERSONA", idPersona.toString())
                         //GENERARTURNO
 
                         val uri2 = "http://192.168.0.3/getfood/generarTurno"
@@ -138,8 +138,8 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
 
 
 
-                            Log.e("response", response.toString())
-                            Log.e("idTurno", response.getJSONObject("0").getString("idTurno"))
+                            //Log.e("response", response.toString())
+                            //Log.e("idTurno", response.getJSONObject("0").getString("idTurno"))
 
                             with(sp.edit()) {
 
@@ -192,8 +192,8 @@ class Orden : AppCompatActivity(), RecyclerClickInterface {
 
 
 
-                        Log.e("response", response.toString())
-                        Log.e("idTurno", response.getJSONObject("0").getString("idTurno"))
+                        //Log.e("response", response.toString())
+                        //Log.e("idTurno", response.getJSONObject("0").getString("idTurno"))
 
                         with(sp.edit()) {
 
@@ -252,7 +252,7 @@ fun cargarPlatillos(id:String, elementoFinal: Boolean = false){
                 puntos = response.getJSONObject(0).getString("puntos"),
                 imagen = response.getJSONObject(0).getString("imagen")
             )
-             Log.e("platillo cargado", platillo.toString())
+             //Log.e("platillo cargado", platillo.toString())
             platillos.add(platillo)
 
             suma+= platillo.costo.removeRange(0,1).toInt()

@@ -54,12 +54,12 @@ class GalleryFragment : Fragment() {
         json.put("usuario", user)
         json.put("codigo", codigo)
 
-        Log.e("Mensaje de prueba", user + codigo)
+        //Log.e("Mensaje de prueba", user + codigo)
 
         val uri = "http://192.168.0.3/getfood/registroCodigo"
         var queue = Volley.newRequestQueue(getActivity())
         val listener = Response.Listener<JSONObject> { response ->
-            Log.e("Mensaje", response.toString())
+            //Log.e("Mensaje", response.toString())
             if(response.getJSONObject("0").getString("resul").equals("0")) {
                 //Toast.makeText(getActivity(), "Inténtalo de más tarde", Toast.LENGTH_SHORT).show()
                 val i = Intent(getActivity(), Confirmar::class.java)

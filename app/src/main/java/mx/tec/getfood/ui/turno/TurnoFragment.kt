@@ -42,7 +42,7 @@ class Turno : Fragment() {
         val view = inflater.inflate(R.layout.fragment_turno, container, false)
         val txtTurno = view.findViewById<TextView>(R.id.txtTurno)
         val sp = requireActivity().getSharedPreferences("orden", Context.MODE_PRIVATE)
-        Log.e("TURNO", sp.getInt("turno",0).toString())
+        //Log.e("TURNO", sp.getInt("turno",0).toString())
        if( sp.getInt("turno",0) != 0){
            txtTurno.text =sp.getInt("turno",0).toString()
        }else{

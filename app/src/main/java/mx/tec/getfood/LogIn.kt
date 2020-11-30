@@ -52,7 +52,7 @@ class LogIn : AppCompatActivity() {
         val uri = "http://192.168.0.3/getfood/login"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
-            Log.e("Mensaje", response.toString())
+            //Log.e("Mensaje", response.toString())
 
             if(response.toString().contains("correcto")){
                 Toast.makeText(this@LogIn, "Bienvenido", Toast.LENGTH_SHORT).show()
@@ -71,7 +71,7 @@ class LogIn : AppCompatActivity() {
                 Toast.makeText(this@LogIn, "El usuario no existe", Toast.LENGTH_SHORT).show()
             if(response.toString().contains("contra"))
                 Toast.makeText(this@LogIn, "Contraseña incorrecta", Toast.LENGTH_SHORT).show()
-            Log.e("Mensaje", resp)
+            //Log.e("Mensaje", resp)
         }
         val error = Response.ErrorListener { error ->
             Log.e("MensajeERRLOG", error.message!!)
