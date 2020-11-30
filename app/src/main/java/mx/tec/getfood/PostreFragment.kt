@@ -43,7 +43,7 @@ class PostreFragment : Fragment(), RecyclerClickInterface {
         lista = v.findViewById(R.id.lvLista)
 
 
-        val uri = "http://10.0.0.12/getfood/postre"
+        val uri = "http://192.168.0.3/getfood/postre"
 
         val listener = Response.Listener<JSONArray> { response ->
             //Log.e("Mensaje", response.toString())
@@ -79,7 +79,7 @@ class PostreFragment : Fragment(), RecyclerClickInterface {
     }
 
     override fun onItemClick(position: Int) {
-        Log.e("Mensaje", "Corre")
+        //Log.e("Mensaje", "Corre")
 
         val i= Intent(context, Platillo::class.java )
         i.putExtra("id",postres[position].id.toString())
@@ -91,6 +91,6 @@ class PostreFragment : Fragment(), RecyclerClickInterface {
     }
 
     override fun onLongItemClick(position: Int) {
-        Log.e("Mensaje", "Corre")
+        //Log.e("Mensaje", "Corre")
     }
 }

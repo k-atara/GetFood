@@ -50,13 +50,11 @@ class   Registro : AppCompatActivity() {
         json.put("nickname", usuario)
         json.put("password", contrasena)
 
-        val uri = "http://10.0.0.12/getfood/usuario"
+        val uri = "http://192.168.0.3/getfood/usuario"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
-            Log.e("Mensaje", response.toString())
+            //Log.e("Mensaje", response.toString())
             if(response.getJSONObject("0").getString("1") == "1")
-
-
                 Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(this, "Intententelo de nuevo", Toast.LENGTH_SHORT).show();

@@ -41,7 +41,7 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
 
         lista = v.findViewById(R.id.lvLista)
 
-        val uri = "http://10.0.0.12/getfood/bebida"
+        val uri = "http://192.168.0.3/getfood/bebida"
 
         val listener = Response.Listener<JSONArray> { response ->
             //Log.e("Mensaje", response.toString())
@@ -77,7 +77,7 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
     }
 
     override fun onItemClick(position: Int) {
-        Log.e("Mensaje", "Corre")
+        //Log.e("Mensaje", "Corre")
         val i = Intent(context, Platillo::class.java)
         i.putExtra("id",bebidas[position].id.toString())
         i.putExtra ("nombre", bebidas[position].nombre)
@@ -90,6 +90,6 @@ class BebidaFragment : Fragment(), RecyclerClickInterface {
     }
 
     override fun onLongItemClick(position: Int) {
-        Log.e("Mensaje", "Corre")
+        //Log.e("Mensaje", "Corre")
     }
 }

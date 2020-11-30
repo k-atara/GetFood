@@ -17,8 +17,10 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".ui.QR.Activity.SplashActivity"/>
         <activity android:name=".ui.QR.Activity.MainQR" />
-        <activity android:name=".ui.orden.Orden"/>
-        <activity android:name=".Platillo" />
+        <activity android:name=".ui.orden.Orden"
+            android:parentActivityName=".Menu"/>
+        <activity android:name=".Platillo"
+            android:parentActivityName=".Menu"/>
         <activity android:name=".Registro" />
         <activity
             android:name=".Menu"
