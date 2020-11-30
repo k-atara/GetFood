@@ -15,7 +15,7 @@
         android:layout_gravity="center|center_horizontal"
         android:background="@drawable/laouy_creame_shape"
         android:fontFamily="@font/raleway_bold"
-        android:text="@string/btnOrdenar"
+        android:text="@string/btnTurno"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/lvLista"
@@ -39,12 +39,12 @@
         android:id="@+id/txtEspecificaciones"
         android:layout_width="250dp"
         android:layout_height="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/edtEspecificaciones"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lvLista" />
 

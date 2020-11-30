@@ -38,21 +38,25 @@ class GalleryFragment : Fragment() {
 
         root.btn_codigo.setOnClickListener {
             val codigo = edt_codigo.text.toString()
-            val sp = getActivity()?.getSharedPreferences("archivo", Context.MODE_PRIVATE)
-            val user = sp?.getString("  Usuario", "-1").toString()
 
-            addCodigo(codigo, user)
+            addCodigo(codigo)
             edt_codigo.setText("")
         }
         return root
     }
 
-    fun addCodigo(codigo: String, usuario: String){
+    fun addCodigo(codigo: String){
+
+        val sp = getActivity()?.getSharedPreferences("archivo", Context.MODE_PRIVATE)
+        val user = sp?.getString("Usuario", "-1").toString()
+
         var json = JSONObject()
-        json.put("usuario", usuario)
+        json.put("usuario", user)
         json.put("codigo", codigo)
 
-        val uri = "http://10.0.0.12/getfood/registroCodigo"
+        Log.e("Mensaje de prueba", user + codigo)
+
+        val uri = "http://192.168.0.3/getfood/registroCodigo"
         var queue = Volley.newRequestQueue(getActivity())
         val listener = Response.Listener<JSONObject> { response ->
             Log.e("Mensaje", response.toString())
