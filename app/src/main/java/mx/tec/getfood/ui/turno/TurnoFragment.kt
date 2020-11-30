@@ -1,10 +1,14 @@
 package mx.tec.getfood.ui.turno
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import kotlinx.android.synthetic.main.fragment_turno.*
 import mx.tec.getfood.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +39,16 @@ class Turno : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_turno, container, false)
+        val view = inflater.inflate(R.layout.fragment_turno, container, false)
+        val txtTurno = view.findViewById<TextView>(R.id.txtTurno)
+        val sp = requireActivity().getSharedPreferences("orden", Context.MODE_PRIVATE)
+        Log.e("TURNO", sp.getInt("turno",0).toString())
+       if( sp.getInt("turno",0) != 0){
+           txtTurno.text =sp.getInt("turno",0).toString()
+       }else{
+           txtTurno.text = "000"
+       }
+        return view;
     }
 
     companion object {

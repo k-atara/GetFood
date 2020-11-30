@@ -2,9 +2,12 @@ package mx.tec.getfood
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
+import android.widget.ImageView
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
@@ -21,12 +24,20 @@ class Platillo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_platillo)
 
+
         val id=intent.getStringExtra("id")
         val nombre=intent.getStringExtra("nombre")
         val descripcion=intent.getStringExtra("descripcion")
         val costo =intent.getStringExtra("costo")
         val puntos = intent.getStringExtra("puntos")
         val imagen=intent.getStringExtra("imagen")
+
+        var image: ImageView? = null
+        image = findViewById(R.id.imageView2)
+        val img = imagen
+        val imageBytes = Base64.decode(img,Base64.DEFAULT)
+        val decodedBitmap = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.size)
+        image!!.setImageBitmap(decodedBitmap)
 
 
 
@@ -66,7 +77,7 @@ class Platillo : AppCompatActivity() {
         json.put("usuario", usuario)
         json.put("codigo", codigo)
 
-        val uri = "http://192.168.1.102/getfood/registroCodigo"
+        val uri = "http://192.168.100.33/getfood/registroCodigo"
         var queue = Volley.newRequestQueue(getActivity())
         val listener = Response.Listener<JSONObject> { response ->
             //Log.e("Mensaje", response.toString())

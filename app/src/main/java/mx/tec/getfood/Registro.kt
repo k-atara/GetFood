@@ -1,5 +1,6 @@
 package mx.tec.getfood
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,10 +14,11 @@ import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_registro.*
 import org.json.JSONObject
 
-class Registro : AppCompatActivity() {
+class   Registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
+
 
         val b0=findViewById<Button>(R.id.btn_registro)
         b0.setOnClickListener {
@@ -48,11 +50,13 @@ class Registro : AppCompatActivity() {
         json.put("nickname", usuario)
         json.put("password", contrasena)
 
-        val uri = "http://192.168.1.102/getfood/usuario"
+        val uri = "http://10.0.0.12/getfood/usuario"
         var queue = Volley.newRequestQueue(this)
         val listener = Response.Listener<JSONObject> { response ->
             Log.e("Mensaje", response.toString())
-            if(response.getJSONObject("0").getString("1").equals("1"))
+            if(response.getJSONObject("0").getString("id").toInt()>0)
+
+
                 Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(this, "Intententelo de nuevo", Toast.LENGTH_SHORT).show();

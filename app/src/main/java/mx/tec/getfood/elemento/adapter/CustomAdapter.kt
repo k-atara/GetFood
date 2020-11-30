@@ -49,6 +49,7 @@ class CustomAdapter(private val context: Context,
             nombre = itemView.findViewById(R.id.txtNombre)
             descripcion = itemView.findViewById(R.id.txtDescripcion)
             costo = itemView.findViewById(R.id.txtCosto)
+            Log.e("elemento en adapter", itemView.toString())
         }
 
         fun bindData(item:Elemento){

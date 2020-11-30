@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txtTurno"
         style="@style/titlesPD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,8 +39,8 @@
         android:layout_marginTop="24dp"
         android:text="Tiempo aprox:10 min"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toEndOf="@+id/txtTurno"
+        app:layout_constraintStart_toStartOf="@+id/txtTurno"
+        app:layout_constraintTop_toBottomOf="@+id/txtTurno" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

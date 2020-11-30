@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/lvLista"
         app:layout_constraintStart_toStartOf="@+id/lvLista"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/txtEspecificaciones"
         app:layout_constraintVertical_bias="0.178" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -35,7 +35,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txtEspecificaciones"
         android:layout_width="250dp"
         android:layout_height="52dp"
         android:layout_marginTop="28dp"
